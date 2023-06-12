@@ -1,0 +1,68 @@
+Instalando o primeiro programa
+
+Baixar o executavel do java para dev: JDK ORACLE
+
+JRE = é o ambiente de execução do java.
+JDK = são as ferramentas de desenvolvimento junto com o ambiente de execução.
+
+	JDK = JRE + ferramentas de desenvolvimento
+
+JVM (Java Virtual Machine) = A responsabilidade da Java Virtual Machine é executar o Bytecode! 
+
+Então qual é diferença entre JVM e JRE? Ambos executam o Bytecode, certo?
+
+O JRE (o nosso ambiente de execução) contém a JVM, mas também possui um monte de bibliotecas embutidas. Ou seja, para rodar uma aplicação Java não basta ter apenas a JVM, também é preciso ter as bibliotecas.
+
+	JRE = JVM + bibliotecas
+
+
+Quais das afirmações abaixo são verdadeiras referente a JDK e JRE?
+
+O JDK é o ambiente para executar uma aplicação Java e possui várias ferramentas de desenvolvimento = O JDK são as ferramentas de desenvolvimento (como o compilador) mas também tem JRE embutido!
+
+O JRE é o ambiente para executar uma aplicação Java = Caso queira executar uma aplicação Java apenas, basta o JRE (Java Runtime Environment), mas para desenvolver em JAVA precisa do JDK
+
+PROCESSO DE COMPILAÇÃO E EXECUÇÃO 
+
+*1 - * Durante a compilação acontece uma verificação sintática do código fonte.
+
+*2 - * Na compilação e execução podem aparecer erros.
+
+*3 - * A JVM lê e executa o Bytecode.
+
+*4 - * O compilador gera o Bytecode caso não tenha nenhum erro sintático no código fonte.
+
+INSTALANDO O IJ ou ECLIPSE
+
+SOBRE IDES
+
+Um IDE é um ambiente integrado de desenvolvimento que centraliza em um único lugar o compilador da linguagem utilizada, editor de texto, documentação e tudo que gira em torno da criação de aplicações.
+
+NetBeans, ECLIPSE e Intellij são outros IDEs famosos do mundo Java.
+
+ECLIPSE:
+
+Um workspace é a pasta padrão que será utilizado para armazenar todos os projetos criados com a IDE Eclipse.
+
+Cada projeto do Eclipse fica dentro de um workspace.
+
+PROJETO JAVA
+
+Dentro de um projeto Java, criamos uma nova classe através da opção do menu File -> New -> Class.
+
+A saída do nosso programa executado pelo Eclipse é feita através da view console.
+
+Executamos nosso programa no Eclipse através do menu Run -> Run as -> Java Application.
+
+VIEW NAVIGATOR
+
+É parecida com o Windows Explorer do Windows ou o Finder do MAC. Ela nos permite ver o diretório do projeto com seus arquivos na integra.
+
+
+
+
+
+
+
+
+
