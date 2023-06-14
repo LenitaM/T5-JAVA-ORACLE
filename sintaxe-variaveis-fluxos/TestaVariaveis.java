@@ -12,6 +12,8 @@ public class TestaVariaveis {
         DOUBLE = Ponto flutuante, numéros decimais, vírgular.
          */
 
+        //INT = VARIÁVEL DO TIPO INTEIRA (NÚMERO)
+
         int idade;
         idade = 26;
 
@@ -22,7 +24,33 @@ public class TestaVariaveis {
 
         System.out.println(idade);
 
+        //CONCATENAÇÃO
+
         System.out.println("A sua idade é " + idade + "."); // + usado para concatenação
+
+
+        //OPERADORES NÚMERICOS EM JAVA
+
+        //Multiplicação = *
+
+        int multi;
+         multi = 5 * 5;
+
+         //DIVISÃO = /
+
+        int div;
+        div = 5 / 5;
+
+         //SOMA = +
+
+        int soma;
+        soma = 5 + 5;
+
+        //SUBTRAÇÃO = -
+
+        int sub;
+        sub = 5 - 5;
+
 
 
     }
