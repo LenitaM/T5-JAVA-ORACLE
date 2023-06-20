@@ -1,0 +1,37 @@
+PARADIGMA PROCEDURAL VS OBJETOS
+
+ 
+A ideia central de paradigma da Orientação a Objetos é Dado e funcionalidade sobre ele andam juntos. No exemplo do vídeo, se o CPF e sua função de validação andassem juntos, teríamos aplicado OO.
+
+PROGRAMAÇÃO PROCEDURAL
+
+Na programação procedural o 1) Copy & Paste e Ctrl + F como prática regular do desenvolvedor para propagar mudanças no projeto. 2) Formulário com inúmeros campos distribuídos em várias abas, tudo sendo gerenciado por um único programador. e 
+3) Não tinha Várias equipes trabalhando em um único projeto:
+
+Para que várias equipes consigam trabalhar em um mesmo projeto, é necessário que as responsabilidades de cada código estejam bem definidas e claras, evitando conflitos na hora de realizar mudanças e evoluções. Código com responsabilidades coesas é sinal do paradigma OO.
+
+ As alternativas que podem ser identificadas como respostas de quem usa o paradigma procedural em seus projetos.
+
+1) "Copie o código de validação que está no formulário ABCD." = Resposta típica de quem usa o paradigma procedural para não arriscar inserir erros em códigos que já estão funcionando ou em produção.
+
+2) Fulano deve entrar em contato com alguém da equipe de analistas de negócio da empresa, para ele entender a regra e implementá-la. = Essa resposta indica que Fulano deve implementar novamente a regra, gerando mais um local caso a regra precise ser alterada. Tipicamente procedural.
+
+3) Dependendo do módulo, Fulano deve perguntar ao responsável técnico do mesmo. = Essa resposta denota que a regra está implementada em vários lugares. Quem é o responsável por ela? Como diz o ditado popular "Cachorro que tem muitos donos acaba morrendo de fome". Tipicamente procedural.
+
+OOP
+
+Basta que Fulano consuma uma classe que representa a informação a ser cadastrada pelo campo. = Caso exista alguma alteração na regra, apenas essa classe será modificada, propagando a mudança para quem a consome. Tipicamente OO.
+
+PROGRAMAÇÃO PROCEDURAL
+
+O paradigma procedural, que era utilizado como prática de programação antes da introdução das linguagens orientadas a objetos.
+
+Foi usada como exemplo a necessidade de validar o CPF em um formulário para discutirmos os principais problemas que podem aparecer neste paradigma.
+
+Em especial, à medida que outros formulários e desenvolvedores precisam da mesma validação de CPF, não era fácil de perceber que já havia procedimentos e funções que faziam esse trabalho, pois dados e funções não possuíam um vínculo tão forte. Isso poderia resultar em mais uma nova função ou trecho de código com responsabilidade parecida.
+
+Além disso, conhecemos a ideia central do paradigma da orientação a objetos, que é criar unidades de código que combinem os dados associados a determinada informação com as funcionalidades aplicadas aqueles dados (por exemplo, CPF + validação). São os atributos e métodos.
+
+PROJETO BYTEBANK - ALURA
+
+Projeto de um banco
