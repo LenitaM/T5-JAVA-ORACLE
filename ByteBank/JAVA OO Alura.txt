@@ -35,3 +35,152 @@ Além disso, conhecemos a ideia central do paradigma da orientação a objetos, 
 PROJETO BYTEBANK - ALURA
 
 Projeto de um banco
+
+PROGRAMAÇÃO ORIENTADA A OBJETOS
+
+Atributos são as características que especificam uma classe. Exemplo: Class Conta { saldo, titular, agencia, mumero};
+
+Parâmetro  = São informações que passamos para uma função;
+
+Argumento = é o nome dado à cada valor que uma função recebe.
+
+Variável = é onde armazenamos dados. Não precisamos de um objeto ou classe para usar variáveis.
+
+CLASSES E INSTÂNCIAS
+
+1 - Uma classe é uma especificação de um tipo, definindo atributos e comportamentos.
+
+2 - Um objeto é uma instância de uma Classe onde podemos definir valores para seus atributos.
+
+3 - Para criar uma instância precisamos usar a palavra chave new.
+
+4 - Na criação de uma instância não precisamos preencher os atributos se não quisermos.
+
+METÓDOS
+
+1 - um método pode ter nenhum, um ou mais parâmetros.
+2 - Um método define o comportamento ou a maneira de fazer algo. Esse é o objetivo de métodos, definir o que um objeto sabe fazer. O comportamento é implementado dentro do método.
+3 - Por convenção, o nome do método no mundo Java deve começar com letra minúscula.
+Exemplo:
+
+transfere
+transferePara
+transfereParaOutroTitular
+
+Repare que todos os nomes começam com letra minúscula e depois usam "CamelCase".
+
+SINTAXE PARA CHAMAR UM MÉTODO:
+
+nomeDaReferencia.nomeDoMetodo(); 
+
+
+Exemplo:
+
+Conta contaDoPaulo = new Conta(parâmetro);
+contaDoPaulo.deposita(30.0);
+
+
+Uso do THIS:
+
+1 - This é uma palavra chave. O this é uma palavra chave igual á void, class, new, int e varias outras. O IDE Eclipse mostra todas as palavras-chave em uma cor diferente, a cor "roxo".
+
+2 - O this é uma referência. O this é uma referência, ou seja, "aponta" para um objeto.
+
+3 - O uso do this é opcional. O uso do this é opcional, mas recomendamos o seu uso, principalmente para o iniciante na linguagem Java.
+
+Metódos sem retorno usa o VOID no método
+
+VOID:
+
+Estrutura
+
+- Com parâmetro: definimos o retorno (nesse caso void), definimos o nome do método (nesse caso deposita) e definimos corretamente os parâmetros (nesse casos dois, double valor e int numero ).
+
+ void deposita(double valor, int numero){
+
+}
+
+OU
+
+- Sem parâmetro: efinimos o retorno (nesse caso void), definimos o nome do método (nesse caso deposita) e definimos corretamente os parâmetros (nesse casos não temos nenhum parâmetro ).
+
+void deposita(){
+
+}
+
+ONDE USAR O THIS?
+
+o this dentro de um método para acessar um atributo:
+
+class Conta {
+
+        double saldo;
+        int numero;
+
+        void deposita(double valor) {
+            this.saldo = this.saldo + valor;
+        }
+}
+
+Estrutura do Método com return:
+
+public boolean saca(double valor) {
+
+    if(saldo >= valor) {
+        saldo -= valor;
+        return true;
+    } else {
+        return false;
+    }
+}
+
+- Precisa ter um tipo (boolean por exemplo) e não pode usar o void.
+
+Private x Public - atributos privados e encapsualemtno: meio de segurança e regras de negócios onde a construção do cod deve ser feito apenas nos métodos e nunca nos atributos.
+
+GETTER E SETTER
+
+Getter = visuzalição de dados dos atributos.
+
+Setter = modificação de dados dos atributos.
+
+Nem sempre precisa ter os dois, necessário olhar as regras de negócios 
+
+- TODOS os atributos precisam ser privados.
+
+Com getter e setter o atributo está protegido e vc pode fazer quantos metódos quiser sem modificar a matriz.
+
+VANTAGENS DOS ATRIBUTOS PRIVADOS:
+
+A implementação interna pode ser modificada sem afetar nenhum código fora da própria classe.
+
+GETTER E SETTER
+
+
+Setters e Getters devem ser usados com cautela e nem todos os atributos privados precisam ser expostos por meio desses dois métodos com riscos de cairmos em um modelo anêmico que tem os seus comportamentos controlados por outras classes.
+
+CONSTRUTORES
+
+Eles são elaborados visando que os objetos tenham seus atributos inicializados na própria construção. Essa estratégia evita estados inconsistentes no nosso objeto. 
+
+1 - Construtores são utilizados para inicialização dos atributos.
+
+2 - Construtores podem receber parâmetros.
+
+3 - Pode ter vários construtores (desde que variem no tipo ou quantidade de parâmetros).
+
+No Java é possível fazer a chamada de um construtor dentro de outro e faz-se isso para evitar duplicações de códigos e regras. Afinal uma regra aplicada em um construtor normalmente será a mesma para o outro caso. Para isso usa-se o this( ) passando os parâmetros correspondentes ao construtor que se queira chamar.
+
+
+STATIC
+
+Variável global que transforma um atributo em um atributo da Classe e não mais subornidao ao objeto.
+
+
+
+
+
+
+
+
+
