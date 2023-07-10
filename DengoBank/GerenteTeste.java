@@ -17,6 +17,8 @@ public class GerenteTeste {
         boolean autenticacao = g1.autentica(123456); //método apenas no Gerente
         //true pq adicionamos uma senha para o gerente, caso n fizermos o get e set a senha inicial é 0 pq n ese=pecificamos
 
-        System.out.println(autenticacao);
+        System.out.println(autenticacao);//
+
+        System.out.println(g1.getBonificacao()); //6000
     }
 }
