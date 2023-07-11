@@ -2,7 +2,7 @@ public class TesteFuncionario {
 
     public static void main(String[] args) {
 
-        Funcionario nico = new Gerente();
+        Gerente nico = new Gerente();
 //Uma classe abstrata representa um conceito, algo abstrato, e o compilador não permite instanciar um objeto dessa classe.
 // Para instanciar é preciso criar primeiro uma classe filha não abstrata.
         nico.setNome("Nico Spook");
@@ -11,6 +11,8 @@ public class TesteFuncionario {
 
         System.out.println(nico.getNome()); //Nico Spook
         System.out.println(nico.getBonificacao());//300.0
+
+        Cliente cliente = new Cliente();
 
 
     }

@@ -8,6 +8,8 @@ public abstract class Funcionario { //todo funconario possui um cargo, mas são 
     private String cpf;
     protected double salario; //Public para os filhos, mas outras classes não
 
+    private int senha;
+
     /*  private < protected < public
 
 A palavra chave com a menor visibilidade é private, depois vem o protected e depois public.
@@ -30,8 +32,6 @@ Repare também que protected na classe filha (Gerente) é relacionado com a hera
 
      public abstract double getBonificacao(); //Métodos abstract, n pode instanciar objetos nessa classes
     //método sem corpo, não há implementação (mas os filhos tem implementações nesse método)
-
-
 
     public String getNome() {
 
@@ -92,4 +92,16 @@ atributos e métodos protected podem ser visto pelas próprias classes e suas fi
 Porém, com private apenas a própria classe enxerga os atributos/métodos.
 
 */
+
+    public void setSenha(int senha) {
+        this.senha = senha;
+    }
+
+    public boolean autentica(int senha) {
+        if (this.senha == senha) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
