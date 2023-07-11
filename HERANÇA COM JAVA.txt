@@ -22,4 +22,13 @@ Isto funciona, porque todo Gerente é um Funcionario.
 
 5 - uma referência genérica Funcionario, que pode apontar para tipos de objetos diferentes, desde que pertençam à mesma hierarquia. Pode apontar tanto para um Gerente, quanto um EditorVideo, ou ainda para um Funcionario.
 
+O QUE É POLIMORFISMO?
 
+Referências de tipos de classes mais genéricas referenciem objetos mais específicos.
+
+Funcionario f = new Gerente();
+
+1 - objetos não mudam de tipo;
+2 - a referência pode mudar, e aí entra o polimorfismo;
+3 - o polimorfismo permite usar referências mais genéricas para a comunicação com um objeto;
+4 - o uso de referências mais genéricas permite desacoplar sistemas.
