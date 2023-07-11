@@ -31,24 +31,27 @@ pois permite redefinir um comportamento previsto na classe mãe através da clas
 * */
 
     public int getSenha() {
+
         return senha;
     }
 
     public void setSenha(int senha) {
+
         this.senha = senha;
     }
 
     /*      SOBRECARGA DO MÉTODO
     Existe um outro conceito nas linguagens OO que se chama de sobrecarga que é muito mais simples do que a sobrescrita e nem dependente da herança.
-    * */
     //novo método, recebendo dois parametros
     public boolean autentica(String login, int senha) {
         //implementacao omitida
-    } /*Repare que criamos uma nova versão do método autentica.
+    }
+    Repare que criamos uma nova versão do método autentica.
     Agora temos dois métodos autentica na mesma classe que variam na quantidade ou tipos de parâmetros.
     Isso se chama sobrecarga de métodos.
+    A sobrecarga não leva em conta a visibilidade ou retorno do método, apenas os parâmetros e não depende da herança.
+     */
 
-A sobrecarga não leva em conta a visibilidade ou retorno do método, apenas os parâmetros e não depende da herança.*/
 
 
 }

@@ -1,0 +1,25 @@
+HERANÇA COM JAVA
+
+REUTILIZAÇÃO DO CÓDIGO:
+
+1- o conceito de extensão da classe, com a palavra extends, isso faz com que a classe filha herde automaticamente os dados, atributos e funcionalidades dos métodos.
+
+2 - Ao criarmos um gerente, ele terá uma senha, porque isso está definido dentro da classe Gerente. Além disso, ele também terá um nome, um cpf e um salário, todos estes, atributos da classe Funcionario. O mesmo vale para os métodos, como getters e setters, e getBonificacao(), incluindo os métodos específicos de Gerente que terão preferência em relação aos mais genéricos.
+
+POLIMORFISMO:
+
+1 - Temos por exemplo a hierarquia da classe Funcionario, em que ela é mãe das classes Gerente e EditorVideo.
+
+2 - O objeto nunca muda o tipo. Uma vez que ele é criado com o tipo Gerente, terá sempre este tipo.
+
+3 - O que pode variar é o tipo da referência - isso é o polimorfismo.
+
+Funcionario gerente = new Gerente();
+
+Isto funciona, porque todo Gerente é um Funcionario.
+
+4 - Temos uma referência genérica, do tipo Funcionario, que aponta para objetos de tipos diferentes. É possível comunicar com tipos diferentes de objetos, a partir de uma mesma referência genérica.
+
+5 - uma referência genérica Funcionario, que pode apontar para tipos de objetos diferentes, desde que pertençam à mesma hierarquia. Pode apontar tanto para um Gerente, quanto um EditorVideo, ou ainda para um Funcionario.
+
+
