@@ -6,7 +6,20 @@ public class Cliente implements Autenticavel {
     /*Como ela assinou o contrato, agora precisa cumprir a obrigação,
     que é de implementar os métodos setSenha() e autentica().*/
     private int senha;
+    private AutenticacaoUtil util;
+    //Com isso, eliminamos a necessidade da existência do atributo senha
+    /*o Cliente chamar a senha, quem guardará esta informação não será diretamente a própria classe, e sim a AutenticacaoUtil.
+    No autenticador, chamaremos o util, desta forma, utilizamos o seu setSenha. Isso significa que delegamos a chamada - o método não foi embora, mas a implementação, que era concreta, agora foi delegada*/
 
+    public Cliente() {
+        this.util = new AutenticacaoUtil();
+    }
+    /*      COMPOSIÇÃO
+ 1 - Criamos uma nova classe, chamada AutenticacaoUtil;
+ 2 - As classes Cliente, Administrador e Gerente as utilizam, esse relacionamento se chama composição;
+ 3 - O relacionamento de composição difere do relacionamento de herança, naquele, há uma interdependência onde a existência de um depende da do outro, já na composição, cada classe existe independentemente.
+ 4 - Isso significa que, quando queremos fazer apenas a reutilização de código, podemos utilizar a composição. Teoricamente, podemos trabalhar sem a herança com o Java.
+ */
     @Override
     public void setSenha(int senha) {
         this.senha = senha;
@@ -14,11 +27,7 @@ public class Cliente implements Autenticavel {
 
     @Override
     public boolean autentica(int senha) {
-        if(this.senha == senha) {
-            return true;
-        } else {
-            return false;
-        }
+       return this.util.autentica(senha);
     }
 
     //obrigamos o Cliente a ter uma senha e um método autentica().

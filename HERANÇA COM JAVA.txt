@@ -32,3 +32,135 @@ Funcionario f = new Gerente();
 2 - a referência pode mudar, e aí entra o polimorfismo;
 3 - o polimorfismo permite usar referências mais genéricas para a comunicação com um objeto;
 4 - o uso de referências mais genéricas permite desacoplar sistemas.
+
+CONSTRUTOR
+
+1 - O construtor default (construtor sem parâmetros) do Java deixa de existir a partir do momento que algum outro é declarado na classe. No entanto, nada impede adicionar o construtor default explicitamente.
+
+2 - Podemos declarar quantos construtores que quisermos.
+
+3 - Além do construtor, pode ser usado um método (setter).
+
+4 - Só podemos construir um objeto sem a passagem de parâmetros no construtor se existir o construtor sem parâmetros.
+
+5 - Construtores não são herdados.
+
+6 - Um construtor da classe mãe pode ser chamado através do super()
+
+A ANOTAÇÃO @Override
+
+É usada para sobrescrever o método da classe mãe, indicando que o método original foi alterado.
+
+ABSTRACT
+
+Só filhos podem criar novos objetos. Não podem ser instanciadas. Para instanciar, devemos criar primeiro uma classe filha não abstrata.
+
+Pode usar tanto na classe como no método.
+Na classe = não pode instanciar (criar o new), criar objetos, apenas os filhos podem criar novos objetos.
+No método = não pode implementar comportamento nos métodos, só os filhos podem fazer isso.
+
+ABSTRACT NO MÉTODO
+
+Não possuem corpo (implementação), apenas definem a assinatura.
+
+MÉTODOS ABSTRATOS
+
+1 - Classes abstratas são úteis quando queremos utilizar comportamentos e atributos base em classes com comportamentos em comum. Os benefícios da herança continuam valendo!
+
+2 - Usamos métodos abstratos quando queremos "forçar" que um filho concreto (classe concreta) implemente um método.  E esse é o sentido de métodos abstratos, garantir que o filho implemente um comportamento.
+
+3 - Classes e métodos abstratos não tem relação direta com consumo de memória.
+
+CLASSES ABSTRATAS
+
+1 - Não podem ser instanciadas.  pois o que é abstrato (a classe) não pode se tornar concreto (objeto). Por isso não podemos instanciar objetos de uma classe abstrata.
+
+2 - Podem ter atributos. Podemos sim ter atributos! Uma classes abstrata é uma classe normal, só não pode instanciar e pode ter métodos abstratos. O resto continua valendo!
+
+3 - Podem ter métodos abstratos (sem implementação). Como vimos uma classe abstrata pode ter métodos sem implementação. Dessa forma obrigamos um filho implementar o método.
+
+4 - Podem ter construtores. Pois podem sim ter construtores! Uma classes abstrata é uma classe normal, só não pode instanciar e pode ter métodos abstratos. O resto continua valendo!
+
+5 - Não podem ter métodos concretos (com implementação). Como podem ter atributos também podem ter métodos concretos!
+
+
+INTERFACES
+
+Dentro das interfaces existem somente assinaturas de métodos e propriedades, cabendo à classe que a utilizará realizar a implementação das assinaturas, dando comportamentos práticos aos métodos.
+
+1 - Utilizando interfaces temos uma outra forma de conseguir polimorfismo sem herança.
+
+2 - é possível implementarmos mais de uma interface simultaneamente.
+
+3 - Ela é um contrato onde quem assina se responsabiliza por implementar esses métodos (cumprir o contrato).
+
+Para realizar a chamada/referência a uma interface por uma determinada classe, é necessário adicionar a palavra-chave IMPLEMENTS ao final da assinatura da classe que irá implementar a interface escolhida.
+
+SOBRE CLASSES E INTERFACES
+
+1 - Podemos estender apenas uma classe abstrata, mas podemos implementar várias interfaces. Existe apenas herança simples em Java, mas podemos implementar quantas interfaces que quisermos.
+
+2 - Todos os métodos de uma interface são abstratos, os de uma classe abstrata podem não ser.Todos os métodos na interface são sempre abstratos e sempre públicos.
+
+Em uma classe abstratos podemos ter métodos concretos e abstratos.
+
+POLIMORFISMO
+
+1 - Temos polimorfismo quando uma classe extende de outra ou também quando uma classe implementa uma interface. Temos polimorfismo via herança ou interface.
+
+2 - É a capacidade de um objeto ser referenciado por vários tipos. Podemos comunicar com um objeto através de tipos de variáveis diferentes.
+Por exemplo, se existir uma classe Gerente que seja filha de Funcionario, um objeto do tipo Gerente pode ser referenciado com o tipo Funcionario também.
+
+HERANÇA EM JAVA
+
+1 - Não existe herança múltipla em Java.
+2 - Interfaces são uma alternativa a herança referente ao polimorfismo
+
+ORIENTAÇÃO A OBJETOS 
+
+Os principais conceitos do paradigma orientado a objetos são:
+
+CLASSE E OBJETOS:
+
+Uma classe é uma forma de definir um tipo de dado em uma linguagem orientada a objeto. Ela é formada por dados e comportamentos. Criação de objetos.
+ 
+Objetos:
+
+Mostra como criar esses objetos, bastando declarar uma variável com o tipo Empresa e com a palavra reservada new criar um novo objeto. Depois podemos definir os dados para os atributos da classe Empresa e, por fim, chamar o método definido.
+
+ASSOCIAÇÃO:
+
+A associação de classes indica quando uma classe tem um tipo de relacionamento "tem um" com outra classe como, por exemplo, uma pessoa tem um carro e isso indica que a classe Pessoa tem uma associação com a classe Carro. Esse tipo de relacionamento entre classes é importante, porque define como as classes interagem entre elas nas aplicações.
+
+Encapsulamento: O conceito do encapsulamento consiste em “esconder” os atributos da classe de quem for utilizá-la. Isso se deve por dois motivos principais.
+
+Um é para que alguém que for usar a classe não a use de forma errada como, por exemplo, em uma classe que tem um método de divisão entre dois atributos da classe - se o programador java não conhecer a implementação interna da classe, ele pode colocar o valor zero no atributo do dividendo, mas se a classe estiver corretamente encapsulada podemos impedir que o programador faça isso. Esse tipo de implementação é feito via os métodos get e set. 
+
+A classe Carro tem os atributos modelo, placa, ano e valor; e a classe Pessoa tem os atributos nome, endereço, telefone e dataNascimento. Além disso, ela tem um relacionamento com a classe Carro.
+
+Classe Pessoa:
+
+ // Relacionamento com a classe Carro
+      private List<Carro> carros = new ArrayList<Carro>();
+
+HERANÇA:
+
+Pai(SuperClasse) -> Filhos(Classes). A herança é um tipo de relacionamento que define que uma classe "é um" de outra classe como, por exemplo, a classe Funcionario que é uma Pessoa, assim um Funcionário tem um relacionamento de herança com a classe Pessoa. Em algumas linguagens, como C, é possível fazer herança múltipla, isto é, uma classe pode herdar de diversas outras classes, mas em Java isso não é permitido, pois cada classe pode herdar de apenas outra classe.
+É utilizado o método extends
+
+public class Funcionario extends Pessoa {}
+
+public: que permite que métodos e atributos sejam acessados diretamente de qualquer classe;
+private: que permite que métodos e atributos sejam acessados apenas dentro da classe;
+protected: que permite que métodos e atributos sejam acessados apenas dentro da própria classe e em classes filhas;
+tipo de acesso padrão, que permite que métodos e atributos sejam acessadas por qualquer classes que esteja no mesmo pacote.
+
+POLIMORFISMO:
+
+O Polimorfismo é a possibilidade de em uma hierarquia de classes implementar métodos com a mesma assinatura e, assim, implementar um mesmo código que funcione para qualquer classe dessa hierarquia sem a necessidade de implementações específicas para cada classe. O principal objetivo do polimorfismo é diminuir a quantidade de código escrito, aumentando a clareza e a facilidade de manutenção.
+
+
+
+
+
+

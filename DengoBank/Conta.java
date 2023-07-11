@@ -1,3 +1,5 @@
+
+/*A classe Conta é a mãe, e é abstrata, por sua vez, as classes ContaCorrente e ContaPoupanca a herdam.*/
 public abstract class Conta {
 
     protected double saldo;

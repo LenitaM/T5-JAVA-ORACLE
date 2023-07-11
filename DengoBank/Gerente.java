@@ -12,9 +12,12 @@ public class Gerente extends Funcionario implements Autenticavel { //extends = h
     //É um Funcionario.
 
     private int senha;
+    private AutenticacaoUtil autenticador;
 
+    public Gerente() {
+        this.autenticador = new AutenticacaoUtil();
+    }
 
-    public Gerente() { }//Construtor}
 
     public double getBonificacao() { //Reescrita, redefinição do método na super classe na classe
         return super.getSalario(); //Precisa ir na super classe mãe e não está definindo na classe filha
@@ -43,19 +46,18 @@ pois permite redefinir um comportamento previsto na classe mãe através da clas
 
     @Override
     public void setSenha(int senha) {
-        this.senha = senha;
+
+        this.autenticador.setSenha(senha);
     }
 
     @Override
     public boolean autentica(int senha) {
-        if(this.senha == senha) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.autenticador.autentica(senha);
     }
-
-
+    /*
+1 - Criamos uma nova classe, chamada AutenticacaoUtil;
+2 - As classes Cliente, Administrador e Gerente as utilizam, esse relacionamento se chama composição;
+*/
 
 }
 
