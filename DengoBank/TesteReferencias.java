@@ -30,16 +30,9 @@ public class TesteReferencias {
 
         //Outra forma de chamar uma variável
 
-        Funcionario g2 = new Funcionario();
 
-        g2.setNome("Maria");
-        g2.setSalario(2000);
-
-        String nome2 = g2.getNome();
 
         //a variável é do tipo Funcionario, ela não é mais do tipo Gerente, e sim do tipo mais genérico.
-
-        System.out.println(nome2); //Maria
 
         //Se buscar o método autentica em g3 dará um erro pq o método não tem na super classe
 
@@ -53,10 +46,8 @@ public class TesteReferencias {
 
         System.out.println(controle.getSoma()); //5500
 
-        Funcionario f1 = new Funcionario();
-        f1.setSalario(2000);
 
-        controle.registra(f1);
+        ;
 
         System.out.println(controle.getSoma()); //5700
 

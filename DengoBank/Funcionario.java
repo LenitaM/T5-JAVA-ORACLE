@@ -1,4 +1,8 @@
-public class Funcionario {
+public abstract class Funcionario { //todo funconario possui um cargo, mas são todos funcionarios.
+    // Para n perder s beneficios da herança usa o abstract
+    //abstract relacionado a herança
+    //Só filhos podem criar novos objetos
+    //Não podem ser instanciadas. Para instanciar, devemos criar primeiro uma classe filha não abstrata.
 
     private String nome;
     private String cpf;
@@ -24,9 +28,10 @@ Repare também que protected na classe filha (Gerente) é relacionado com a hera
     //se não criamos um construtor, o compilador insere o construtor padrão.
     //O construtor padrão (default) é aquele que não recebe nenhum parâmetro.
 
-    public double getBonificacao() {
-        return this.salario * 0.1;
-    }
+     public abstract double getBonificacao(); //Métodos abstract, n pode instanciar objetos nessa classes
+    //método sem corpo, não há implementação (mas os filhos tem implementações nesse método)
+
+
 
     public String getNome() {
 
