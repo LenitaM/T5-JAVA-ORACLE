@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3ed8992-a173-406c-af77-dbb2575e0b3a" name="Changes" comment="" />
+    <list default="true" id="f3ed8992-a173-406c-af77-dbb2575e0b3a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DengoBank/AutenticaUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/CalculadorDeImposto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/CalculoImpostor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/SeguroDeVida.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/TesteTributaveis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/Tributavel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Administrador.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/AutenticacaoUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Autenticavel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/CalculadorDeImposto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/CalculoImpostor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/FuncionarioAutenticavel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/SeguroDeVida.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/SistemaInterno.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/TesteGerente.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/TesteSistema.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/TesteTributaveis.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Tributavel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/Autenticavel.java" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/Autenticavel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/Conta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/ContaCorrente.java" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/ContaCorrente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/EditorVideo.java" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/EditorVideo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/Gerente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/TesteSistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/TesteSistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Conta.class" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Conta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/ContaCorrente.class" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/ContaCorrente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/ContaPoupanca.class" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/ContaPoupanca.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/EditorVideo.class" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/EditorVideo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Funcionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Gerente.class" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/Gerente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/TesteContas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/TesteFuncionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/TesteFuncionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/TesteReferencias.class" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/TesteReferencias.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/TestesContas.class" beforeDir="false" afterPath="$PROJECT_DIR$/DengoBank/out/production/DengoBank/TestesContas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HERANÇA COM JAVA.txt" beforeDir="false" afterPath="$PROJECT_DIR$/HERANÇA COM JAVA.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

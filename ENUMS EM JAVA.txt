@@ -1,0 +1,24 @@
+ENUMS EM JAVA
+
+Definindo prioridades, usado para definir constantes como botões, estações do ano, status de pedidos.  
+
+setPriority(.escola de prioridade)
+
+MIN_PRIORITY
+
+NORM_PRIORITY
+
+MAX_PRIORITY
+
+Enums foram criados para definições prioridades.
+
+Um tipo enum é um tipo de dados especial que permite que uma variável seja um conjunto de constantes predefinidas. A variável deve ser igual a um dos valores que foram predefinidos para ela. Exemplos comuns incluem direções da bússola (valores de NORTE, SUL, LESTE e OESTE) e os dias da semana.
+
+Por serem constantes, os nomes dos campos de um tipo enum estão em letras maiúsculas.
+
+Exemplo:
+
+public enum Dia {
+    DOMINGO SEGUNDA TERÇA QUARTA,
+    QUINTA SEXTA SÁBADO
+}

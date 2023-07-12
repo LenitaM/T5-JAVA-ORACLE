@@ -96,13 +96,59 @@ Dentro das interfaces existem somente assinaturas de métodos e propriedades, ca
 
 Para realizar a chamada/referência a uma interface por uma determinada classe, é necessário adicionar a palavra-chave IMPLEMENTS ao final da assinatura da classe que irá implementar a interface escolhida.
 
+Anteriormente, definimos nossa própria interface e, como vimos, ela não possui um código concreto. Não é possível definir um atributo dentro de uma, o código simplesmente não compila. Da mesma forma, nenhum método poderá ter uma implementação.
+
+    Uma interface só define métodos, as regras destes devem ser definidas nas classes que a implementem.
+    
+    Todas as classes que a implementarem terão a obrigação de implementar os métodos setSenha() e autentica().
+
+Se quisermos somente uma solução pura de polimorfismo, podemos utilizar a interface.
+
+COMPOSIÇÃO
+
+COMPOSIÇÃO 
+
+Reutilizando código sem usar herança:
+
+ 1 - Criamos uma nova classe, chamada AutenticacaoUtil;
+
+ 2 - As classes Cliente, Administrador e Gerente as utilizam, esse relacionamento se chama composição;
+
+ 3 - O relacionamento de composição difere do relacionamento de herança, naquele, há uma interdependência onde a existência de um depende da do outro, já na composição, cada classe existe independentemente;
+
+ 4 - Isso significa que, quando queremos fazer apenas a reutilização de código, podemos utilizar a composição. 
+ Teoricamente, podemos trabalhar sem a herança com o Java.
+
+(Dado Histórico:
+James Gosling, o inventor da linguagem Java, em uma entrevista falou que, à época da criação do Java, ele estava experimentando com as interfaces e que talvez, se tivesse mais tempo e menos pressão comercial para lançar a linguagem, a teria lançado sem a herança.
+
+Ele não afirma que a herança é algo negativo, pelo contrário, mas é um conceito difícil de se acertar. Já a interface e a composição são mais flexíveis e fáceis de trabalhar.)
+
+No fim, temos as duas opções em Java. Atualmente, é mais comum a utilização das interfaces e composições, em detrimento da herança, mas é importante sabermos que ambos existem.
+
 SOBRE CLASSES E INTERFACES
+
+-Recapitulando: Uma interface contém somente abstrações, não possui nenhum atributo ou método concreto.-
 
 1 - Podemos estender apenas uma classe abstrata, mas podemos implementar várias interfaces. Existe apenas herança simples em Java, mas podemos implementar quantas interfaces que quisermos.
 
 2 - Todos os métodos de uma interface são abstratos, os de uma classe abstrata podem não ser.Todos os métodos na interface são sempre abstratos e sempre públicos.
 
 Em uma classe abstratos podemos ter métodos concretos e abstratos.
+
+VANTAGENS DO USO DE HERANÇA
+
+A herança captura o que é comum e isola aquilo que é diferente entre classes.
+
+VANTAGENS DO USO DE INTERFACES
+
+Garante que todos os métodos de classes que implementam uma interface possam ser chamados com segurança. Isso é a ideia do contrato, garantindo que a classe tenha um comportamento, basta assinar o contrato (implementar a inteface).
+
+COMPOSIÇÃO X HERANÇA
+
+VANTAGENS DO USO DA COMPOSIÇÃO E INTERFACE AO INVE´S DA HERANÇA
+
+Resposta: Com composições e interfaces teremos mais flexibilidade com nosso código, já que não nos prenderemos ao acoplamento que a herança propõe.
 
 POLIMORFISMO
 
