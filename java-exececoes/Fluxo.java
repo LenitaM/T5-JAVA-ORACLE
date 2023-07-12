@@ -28,17 +28,17 @@ A JVM também sabe quais outros precisam ser executados ainda, que são justamen
         try {
             metodo1();
 
-        } catch (ArithmeticException | NullPointerException ex){ //Esse catch n vai funcionar no outro erro pq ele é especifico
+        } catch (ArithmeticException ex){ //Esse catch n vai funcionar no outro erro pq ele é especifico
            //String msg = ex.getMessage(); //mensagem original
            //System.out.println("AritmeticException" + msg);
            ex.printStackTrace(); //Vai imprimir no console os rastros da pilha que estão em execução
-//Pode ser assim:
+
         } catch(NullPointerException ex) { //Null - A exceção mais comum na programação
             String msg = ex.getMessage(); //getMessage() - Tem em toda exceção
             System.out.println("NullPointerException" + msg);
         } //Agora o catch o fluxo permace
         System.out.println("Fim do main");
-    }
+    } //Pode ser assim: catch (ArithmeticException | NullPointerException ex)
 
         private static void metodo1() {
             System.out.println("Inicio do metodo1");
@@ -55,8 +55,8 @@ A JVM também sabe quais outros precisam ser executados ainda, que são justamen
                // } catch(ArithmeticException ex) { //Pega o nome dessa exceção dentro do fluxo
                   //  System.out.println("ArithmeticException");
                // }
-                Conta c = null;
-                c.deposita(); //Linha problemática pq n tem objeto.
+                //Conta c = null;
+                //c.deposita(); //Linha problemática pq n tem objeto.
 
             }
             System.out.println("Fim do metodo2");
