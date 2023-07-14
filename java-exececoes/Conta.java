@@ -13,7 +13,9 @@ public class Conta {
         this.numero = numero;
     }
 
-    public void deposita(double valor) {}
+    public void deposita() throws MinhaExcecao{ //Experimento
+
+    }
 
     public boolean saca(double valor) {
         if(this.saldo >= valor) {
