@@ -1,6 +1,6 @@
 public class TestaContaComExcecaoChecked {
 
-    Conta c = new Conta();
+    Conta2 c = new Conta2();
     try {
         c.deposita();
     }catch(MinhaExcecao excecao) {

@@ -13,7 +13,7 @@ public class Conta {
         this.numero = numero;
     }
 
-    public void deposita() throws MinhaExcecao{ //Experimento
+    public void deposita(double valor) { //Experimento
 
     }
 

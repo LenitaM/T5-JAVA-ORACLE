@@ -19,24 +19,24 @@ public abstract class Conta {
         System.out.println("Estou criando uma conta " + this.numero);
     }
 
+
+
+
     public  abstract void deposita(double valor);
 
-    public boolean saca(double valor) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
-            return true;
-        } else {
-            return false;
+    //Criando a exceção
+    public void saca(double valor) throws SaldoInsuficienteException { //assinar o método perigoso
+        if(this.saldo < valor) {
+            throw new SaldoInsuficienteException("O saldo: " + this.saldo + ". Valor a sacar: " + valor);
         }
+        this.saldo -= valor;
     }
 
-    public boolean transfere(double valor, Conta destino) {
-        if(this.saca(valor)) {
-            destino.deposita(valor);
-            return true;
-        } else {
-            return false;
-        }
+
+    public void transfere(double valor, Conta destino) throws SaldoInsuficienteException { //botar throws em todos que usa saca
+        this.saca(valor);
+        destino.deposita(valor);
+
     }
 
     public double getSaldo(){
