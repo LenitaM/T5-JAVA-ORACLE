@@ -3,6 +3,13 @@ package teste;
 import modelo.ContaCorrente;
 import modelo.ContaPoupanca;
 
+/*
+* Classe representa moldura de uma conta
+*
+* @author Lenita Maciel
+* */
+
+
 public class TestesContas {
 
     public static void main(String[] args) {

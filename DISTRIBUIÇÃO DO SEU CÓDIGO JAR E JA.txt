@@ -1,0 +1,91 @@
+DISTRIBUIÇÃO DO SEU CÓDIGO: JAR E JAVADOC
+
+JAVADOC
+
+Javadoc é uma ferramenta que gera documentação de código Java no formato HTML a partir do código-fonte Java. A documentação é formada a partir de comentários Javadoc que geralmente são colocados acima de classes, métodos ou campos. 
+
+Para entendermos melhor como instrumentalizar algumas classes, começaremos a analisar a documentação Java. Digamos que seja necessário passar nosso projeto atual para outra equipe, para que essa transferência de projeto se dê da melhor forma precisamos nos preocupar com a documentação do código, o mínimo para ajudar os outros desenvolvedores. Precisamos, ainda, pensar em um modo de repassar todas as classes do projeto para a outra equipe da maneira mais simples o possível.
+
+Pode usar dos comandos para argumentar fora da doc oficial, passar informações válidas:
+
+// = seleciona apenas uma linha
+
+/**/ = Várias linhas ou para escrever textos maiores
+
+Com jdk pode gerar o javadoc no project em html onde contem todos os argumentos documentados no projeto.
+
+Para comentários de método, o novo stub de comentário contém as tags necessárias ( @paramtags para cada parâmetro de método, @returnou @throws).
+
+FORMA DE USAR O JAVADOC NO  IJ:
+
+1 - lupa
+2 - Whole Project
+4 - Incude JDK and libray sources in -soucepath
+3 - Visibility level: Protected
+
+Não aprecer no javadoc:
+
+Não é verdadeira pois apenas os membros "públicos" são contemplados no javadoc. Outros membros (não públicos) são considerados detalhes da implementação e não podem ser utilizados por outras classes.
+
+PARA USAR O JAVADOC:
+
+a) É preciso ter instalado o JDK para poder gerar a documentação javadoc.
+
+b) O javadoc é uma documentação escrita pelo desenvolvedor para desenvolvedores.
+
+c) Existem tags especias para marcar o autor ou a versão da classe.
+
+TAGS DO JAVADOC:
+
+@author (usado na classe ou interface)
+@version (usado na classe ou interface)
+@param (usado no método e construtor)
+@return (usado apenas no método)
+@exception ou @throws (no método ou construtor)
+@see
+@since
+@serial
+@deprecated
+
+*Importante é que as tags do javadoc existem apenas para padronizar alguns dados fundamentais do seu código fonte como o autor e a versão.*
+
+______________ANOTAÇÕES EM JAVA__________________________
+
+As anotações vão muito além das tags javadoc e são muito mais sofisticadas e poderosas. Elas só entraram na plataforma Java a partir da versão 1.5 enquanto o javadoc está presente desde o nascimento da plataforma Java. O interessante é que as anotações foram inspirados pelas tags do javadoc.
+
+-------CRIANDO UMA BIBLIOTECA EM JAR (J*ava *ARchive) --------
+
+1 - É o formato padrão do mundo Java para distribuir código compilado.
+
+2 - É um arquivo compactado como ZIP. Mas em Java a é extensão (.jar)
+
+A ideia é que passemos para o desenvolvedor o código compilado dentro de um arquivo ".zip", e a documentação, afinal, ele não necessariamente precisa do código fonte, que é de nossa responsabilidade.
+
+No entanto, o Java não chama esse tipo de arquivo de código compilado de ".zip", o tipo do arquivo na verdade é "JAR".
+
+Poderíamos criar esse arquivo ".jar" manualmente, manipulando todo o conteúdo através do visualizador "Navigator".
+
+Como passar documentação para outra equipe, exportar e ter acesso as classes.
+
+Como gerar um JAR no IJ:
+
+1) File (No canto superior direito) -> Project Structure -> Project Settings -> Artifacts -> Clique no "+" -> Jar -> From modules with dependencies... > selecione qual é a classe Main (Nome do projeto) > OK
+
+2) Configurado o artefato vá em Build > Build Artifact > Build
+
+o JAR será gerado no output directory configurado no passo 1
+
+MAVEN
+
+o Maven que ajuda você a automatizar seu processo de construção. Você pode facilmente criar um novo projeto Maven, abrir e sincronizar um existente, adicionar um suporte Maven a qualquer projeto IntelliJ IDEA existente, configurar e gerenciar um projeto multimódulo. Pode criar um projeto Maven e armazená-lo no ambiente WSL ou abri-lo no sistema de arquivos WSL.
+
+Aí existe a necessidade de organizar, centralizar e versionar os JARs dessa biblioteca e gerenciar as dependências entre elas. Para resolver isso, foram criadas ferramentas especificas e no mundo Java se destacou o Maven. O Maven organiza os JARs (código compilado, código fonte e documentação) em um repositório central que é publico e pode ser pesquisado:
+
+https://mvnrepository.com/
+
+Lá você pode ver e até baixar os JARs, mas o melhor é que a ferramenta Maven pode fazer isso para você. Se ficou interessado em aprender o Maven que ainda tem outros recursos bem legais, dá uma olhada no nosso curso especifico:
+
+Maven: Build do zero a web
+
+Obs: Se você é usuário Linux, o Maven é bem parecido com os gerenciadores apt ou rpm. No MacOS existe o brew com o mesmo propósito. No mundo .Net temos o nuget e a plataforma node.js usa npm. Gerenciar dependências é um problema do cotidiano do desenvolvedor, e cada sistema ou plataforma possui a sua solução.
+

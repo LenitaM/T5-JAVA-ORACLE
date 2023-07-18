@@ -1,5 +1,15 @@
 package modelo;
 
+/**
+ *
+ */
+/* Como documentar projetos em java:
+*
+* Classe que representa um cliente no ByteBank
+*
+* @author Lenita Maciel
+* @version 0.1
+* */
 public class Cliente implements Autenticavel {
     //Implements: Utilizamos este termo somente quando queremos herdar algo de outra classe,
     // mas com a interface estamos "assinando um contrato", isto significa no mundo Java que estamos implementando
@@ -13,6 +23,10 @@ public class Cliente implements Autenticavel {
     /*o modelo.Cliente chamar a senha, quem guardará esta informação não será diretamente a própria classe, e sim a AutenticacaoUtil.
     No autenticador, chamaremos o util, desta forma, utilizamos o seu setSenha. Isso significa que delegamos a chamada - o método não foi embora, mas a implementação, que era concreta, agora foi delegada*/
 
+
+    /**
+     *
+     */
     public Cliente() {
         this.util = new AutenticacaoUtil();
     }

@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DengoBank.iml" filepath="$PROJECT_DIR$/.idea/DengoBank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/com/alura/alura.iml" filepath="$PROJECT_DIR$/br/com/alura/alura.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/com/alura/banco/banco.iml" filepath="$PROJECT_DIR$/br/com/alura/banco/banco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/br.iml" filepath="$PROJECT_DIR$/br/br.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/com/com.iml" filepath="$PROJECT_DIR$/br/com/com.iml" />
     </modules>
   </component>
 </project>
