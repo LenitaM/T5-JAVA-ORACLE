@@ -1,0 +1,37 @@
+MODIFICADORES DE ACESSO / VISIBILIDADE
+
+Os modificadores podem ser usados na definição da classe, atributo, construtor e método
+
+PRIVATE = visível apenas na classe que a pertece. 
+
+Classe   Package   Classe Filho   Qq Package
+───────────────────────────────────────────
+ ✔          ✘        ✘             ✘
+───────────────────────────────────────────
+
+<<package private>> (default) = qiando não coloca nada na frente do método, ele fica visível apenas para as classes do package. 
+
+Classe   Package   Classe Filho   Qq Package
+───────────────────────────────────────────
+ ✔        ✔         ✘             ✘
+───────────────────────────────────────────
+A ausência do modificador, também chamado de package private ou default, o membro fica visível na classe e no package, mas é invisível fora do pacote (nem para filhos).
+
+PROTECTED = publico APENAS para os filhos (class) das classes mães (super class). 
+
+Classe   Package   Classe Filho   Qualquer Package
+───────────────────────────────────────────
+ ✔        ✔         ✔             ✘
+───────────────────────────────────────────
+O modificador protected funciona igual ao *<<package private>>*, mas adiciona a visibilidade para os filhos (chamado de "publico para os filhos").
+
+PUBLIC = vísvel em todo lugar, incluse fora do package que a pertence.
+
+Classe   Package   Classe Filho   Qualquer Package
+───────────────────────────────────────────
+ ✔        ✔         ✔             ✔
+───────────────────────────────────────────
+
+Onde a ordem do MAIS restritivo para o MENOS restritivo é:
+
+private -> default -> protected -> public

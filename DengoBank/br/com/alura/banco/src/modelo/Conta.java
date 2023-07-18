@@ -3,7 +3,7 @@ package modelo;
 /*A classe modelo.Conta é a mãe, e é abstrata, por sua vez, as classes modelo.ContaCorrente e modelo.ContaPoupanca a herdam.*/
 public abstract class Conta {
 
-    protected double saldo;
+   protected double saldo;
     private int agencia;
     private int numero;
     private Cliente titular;
