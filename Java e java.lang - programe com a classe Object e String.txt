@@ -1,0 +1,56 @@
+Java e java.lang: programe com a classe Object e String
+
+Packages:
+
+1) Packages são diretórios com significado especial dentro do código fonte Java.
+2) A palavra chave package deve ser a primeira declaração no código fonte Java.
+3) Packages servem para organização e agrupar as classes e interfaces.
+
+FQN
+o FQN (Full Qualified Name) é nome completo da classe, composto pelo nome do pacote e o nome da classe.
+Exemplo:
+
+	FQN = Nome Pacote . Nome Simples da Classe
+
+Para não usar o nome todo dessa parta de destino das Classes no IJ e Eclipse pode importar os packges das classes.
+
+PADRÃO DE ORGANIZAÇÃO DE PROJETOS:
+
+ Vários packges (sempre packge) com essa estrutura -
+
+br (país de origem da empresa) -> com (dominio do site da empres) -> nome da empresa (nome do projeto) -> banco (nome do projeto) -> packges.
+
+O packge fica assim: 
+
+br.com.uberdist.udnotas = 
+
+NOME_DO_SITE_AO_CONTRARIO.NOME_DO_PROJETO
+
+PACKGES SEMPRE NÃO USE MODULES
+
+ESTRUTURA CORRETA DOS PACKGES:
+
+a) Só pode ter uma declaração package por arquivo
+
+b) A declaração do import é opcional
+
+c) É possível repetir a declaração import para importações de packages diferentes
+
+d) A definição da classe sempre deve vir por último (após package e import)
+
+PACKAGES SÃO USADOS PARA:
+
+O modificador default do Java restringe acesso a nível de pacote. Logo, se não for definido algum modificador, seja na classe, método, ou atributo, apenas classes do mesmo pacote podem acessar essas informações = com default apenas classes do mesmo pacote podem acessar essas informações.
+
+Quando um projeto utiliza pacotes, podemos usar o import de outras classes para sua utilização = O import facilita o uso da classe pois não precisamos do Full Qualified Name.
+
+Por organização e pela convenção adotada, precisamos seguir o domínio da empresa. Ou seja, se a empresa tem como domínio alura.com.br, os pacotes devem ser subpacotes de br.com.alura.
+
+__ a nomenclatura padrão é usar o nome do domínio na web ao contrário junto com o nome do projeto, por exemplo:
+
+br.com.caelum.geradornotas
+br.com.alura.gnarus
+br.gov.rj.notas
+de.adidas.lager
+
+
