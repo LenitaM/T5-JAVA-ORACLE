@@ -70,7 +70,7 @@ Sobrecarga:
 
 	Existem duas versões do método replace(), e os dois variam nos parâmetros, ambos recebem dois, mas os tipos são diferentes. O conceito de métodos que variam nos tipos de parâmetros é chamado de sobrecarga, muito comum no mundo Java.
 	
-replace() = recebe CharSequence e outro um char; o primeiro está relacionado a conversão de um conjunto de caracteres.
+replace() = recebe CharSequence e outro um char; o primeiro está relacionado a conversão de um conjunto de caracteres. Método replace não altera a String original e sim devolve uma nova String.
 
 			String outra = nome.replace("Al", "aL");
 
@@ -177,6 +177,102 @@ String vazio ="    Alura    ";
 String outroVazio = vazio.trim(); 
 
 System.out.println(vazio.contains("Alu")); // true
+
+§ INTERFACE de CharSequence 
+
+O tipo CharSequence é uma interface que a própria classe String implementa (pois uma String é uma sequência de caracteres!):
+
+public class String implements CharSequence {}
+
+Quando usamos a classe String até poderíamos declarar a variável com o tipo da interface, mas isso é raro de se ver:
+
+CharSequence seq = "é uma sequencia de caracteres";
+
+Interessante é que existem outras classes que também implementam a interface CharSequence. Em outras palavras, existem outras classes que são sequências de caracteres além da classe String.
+
++ StringBuilder = Ajuda na concatenção de Strings.
+
+classe String é especial pois gera objetos imutáveis. Isso é considerado benéfico pensando no design mas é ruim pensando no desempenho (e por isso devemos usar aspas duplas na criação, pois a JVM quer contornar os problemas no desempenho com otimizações). 
+
+Agora vem um problema: imagina que você precisa criar um texto enorme e precisa concatenar muitas String.
+
+String texto = "Socorram";
+texto = texto.concat("-");
+texto = texto.concat("me");
+texto = texto.concat(", ");
+texto = texto.concat("subi ");
+texto = texto.concat("no ");
+texto = texto.concat("ônibus ");
+texto = texto.concat("em ");
+texto = texto.concat("Marrocos");
+System.out.println(texto); 
+
+Nesse pequeno exemplo já criamos vários objetos, só porque estamos concatenando algumas Strings. Isso é nada bom pensando no desempenho e para resolver isso existe a classe StringBuilder que ajuda na concatenação de Strings de forma mais eficiente.
+
+StringBuilder builder = new StringBuilder("Socorram");
+
+builder.append("-");
+builder.append("me");
+builder.append(", ");
+builder.append("subi ");
+builder.append("no ");
+builder.append("ônibus ");
+builder.append("em ");
+builder.append("Marrocos");
+String texto = builder.toString();
+
+System.out.println(texto);
+
+O StringBuilder é uma classe comum. Repare que usamos o new para a criação do objeto. Além disso, como o objeto é mutável, utilizamos a mesma referência, sem novas atribuições.
+
+A INTERFACE CharSequence
+
+Agora o legal é que a classe StringBuilder também implementa a interface CharSequence:
+
+public class StringBuilder implements CharSequence {
+
+CharSequence cs = new StringBuilder("também é uma sequencia de caracteres");
+
+ }
+
+
+Isso faz que alguns métodos da classe String saibam trabalhar com o StringBuilder, por exemplo:
+
+String nome = "ALURA";
+CharSequence cs = new StringBuilder("al");
+
+nome = nome.replace("AL", cs);
+
+System.out.println(nome);
+
+Vice-versa a classe StringBuilder tem métodos que recebem o tipo CharSequence. Dessa forma podemos trabalhar de maneira compatível com as duas classes, baseado numa interface comum.
+
+SOBRE STRING NO GERAL:
+
+1 - o package java.lang é o único pacote que não precisa ser importado.
+
+2 - nele tem classes fundamentais que qualquer aplicação precisa, como a classe String e System.
+
+3 - objetos da classe String são imutáveis e usamos uma sintaxe literal para criar (object literal).
+
+4 - qualquer método de alteração da classe String devolve uma nova String que representa a alteração.
+
+5 - a classe String é uma CharSequence.
+
+6 - se precisamos concatenar muitos String devemos usar a classe StringBuilder.
+
+7 - vimos vários métodos da classe String como trim, charAt, contains, isEmpty, length, indexOf, replace.
+
+
+
+
+
+
+
+
+
+
+
 
  
 
