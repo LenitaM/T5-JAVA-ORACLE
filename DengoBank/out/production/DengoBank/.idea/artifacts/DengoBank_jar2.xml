@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="DengoBank:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/DengoBank_jar</output-path>
+  <artifact type="jar" name="DengoBank:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/DengoBank_jar2</output-path>
     <root id="archive" name="DengoBank.jar">
       <element id="module-output" name="DengoBank" />
       <element id="module-output" name="banco" />

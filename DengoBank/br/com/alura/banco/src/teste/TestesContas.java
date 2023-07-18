@@ -2,6 +2,8 @@ package teste;
 
 import modelo.ContaCorrente;
 import modelo.ContaPoupanca;
+import java.lang.String;
+
 
 /*
 * Classe representa moldura de uma conta

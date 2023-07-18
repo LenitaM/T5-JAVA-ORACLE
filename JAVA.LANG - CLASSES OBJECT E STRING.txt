@@ -1,0 +1,66 @@
+O PACOTE JAVA.LANG - CLASSES OBJECT E STRING
+
+STRING
+
+String e System são classes. Falamos anteriormente que todas as classes estão dentro de um pacote, mas como lidamos com essas duas? Devemos utiliza-las a partir de um import, como com todas as outras classes, certo?
+
+As classes String e System estão, sim, dentro de um pacote, mas não é necessário importa-las. O único pacote que não necessita ser importado é java.lang. Por ser de suma importância para o desenvolvimento de qualquer aplicação Java, ele é incluído automaticamente.
+
+1 - As classes String e System vem desse pacote.
+2 - Não precisa do import, é automaticamente importado.
+3 - Possui classes essenciais para qualquer programa.
+
+Quando falamos sobre exceções já vimos várias classes como Exception, RuntimeException, NullPointerException ou ArithmeticException.
+
+Todas essas classes vem do pacote java.lang e por isso não era preciso importá-las.
+
+CLASSE STRING E A IMUTABILIDADE
+
+Strings também são objetos. No entanto, não é preciso utilizar o new para criar este objeto. Isso ocorre para facilitar a vida do desenvolvedor, não precisamos utilizar o *new* todas as vezes que formos trabalhar com Strings, mas nada impede que você o faça. Portanto, as duas formas são funcionais, embora o *segundo caso* seja considerado uma má prática. A partir da primeira forma a máquina virtual consegue executar algumas otimizações, o que é impossível no segundo caso.
+
+ Criação de objetos usando a classe String 
+
+1º Caso: Objeto Literal
+
+String nome = "Alura"; 
+Classe referência = objeto
+
+2º Caso:
+
+String outro = new String("Alura");
+
+Chamamos essa sintaxe de *objeto literal*. Na sintaxe não há diferença entre inicializar um inteiro(int) e uma String. nome é uma referência, então nada nos impede de executar métodos em cima dela. 
+
+CONCEITO FUNDAMENTAL DA STRING:
+
+ String nome = "Alura";
+
+Uma vez que foi criada, ela não poderá ser modificada posteriormente. Chamamos o conceito de um objeto não poder ser alterado de IMUTABILIDADE. 
+Caso você queira alterar algo em uma String, você terá de criar uma String que refletirá uma nova ação, ou seja, teremos dois objetos, como duas "Aluras", sendo uma com "A" e outra com "a".
+
+Se quisermos imprimir alura, deveremos criar uma String que chamaremos de outra, e que apontará para o objeto de nosso interesse.
+
+
+public String replace(char oldChar, char newChar) = replace() retorna uma String.
+
+
+String outra = nome.replace("A", "a");
+
+Na verdade, temos duas String na memória, sendo uma nome que aponta para o objeto Alura e a String outra que aponta para um novo objeto, no caso, alura.
+
+Todos os métodos funcionam nessa linha: devolvem uma nova String, respeitando o conceito de imutabilidade. Esse é um conceito importante e algumas classes do nosso projeto seguem essa ideia.
+
+Nem todas classes são imutáveis, a nossa classe Conta não é imutável, afinal a ideia de uma conta é necessariamente dinâmica, o saldo de uma conta está sempre em movimento e transformação.
+
+SOBRE STRING:
+
+1 - É uma classe definida em java.lang e por isso não há a necessidade de importar. Pois a classe String realmente é do pacote java.lang. O FQN é java.lang.String
+
+2 - Um objeto do tipo String não pode ser alterado. Objetos da classe String são imutáveis. Isso significa que, uma vez criado, não pode ser alterado, por isso qualquer alteração cria um novo objeto String.
+
+3 - Pode ser criada tanto usando new quanto aspas duplas e há diferenças em relação a isso. Pois existe sim uma diferença entre a criação com new e a criação com aspas duplas. Usar aspas duplas é boa prática pois a JVM pode executar várias otimizações por baixo dos panos.
+
+4 - Serve para definirmos textos e não precisa ser criadas usando a palavra new, pois Strings podem e devem ser criados usando aspas duplas, como boas práticas:
+		String nome = "alura";
+
+
