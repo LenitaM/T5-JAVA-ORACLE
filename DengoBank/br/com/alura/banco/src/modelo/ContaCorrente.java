@@ -36,6 +36,15 @@ public class ContaCorrente extends Conta implements Tributavel {
 
     @Override
     public double getValorImposto() {
+
         return super.saldo * 0.01;
     }
+
+    @Override
+    public String toString() { //Sobreescrever um método da classe Object
+        return "ContaCorrente: " + super.getNumero();
+        //sobreescreve e reutiliza o código pq agora eles utilizam o método do objeto toString();
+    }
+
+
 }

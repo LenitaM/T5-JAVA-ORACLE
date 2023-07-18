@@ -117,5 +117,7 @@ ele devolve uma nova apresentação, que chamaremos de outroVazio.*/
          Perguntaremos se a String vazio possui uma sub-String Alu. Devolve um valor booleano.*/
 
         System.out.println(vazio.contains("Alu"));//false - pq n coloquei nada
+
+        
     }
 }

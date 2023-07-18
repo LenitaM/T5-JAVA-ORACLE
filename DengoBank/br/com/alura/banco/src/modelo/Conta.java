@@ -80,5 +80,13 @@ public abstract class Conta {
         return Conta.total;
     }
 
+    //HERANÇA = CLASSE OBJECT
 
+    @Override
+    public String toString() {
+        return "Número: " + this.numero + ", Agencia: " + this.agencia;
+        //agora os filhos irão mudar tb pq os dois usam o método de object toString( );
+        // Não usa super pq a classe em cima da Conta é Object e ela n possuem esse método
+
+    }
 }
