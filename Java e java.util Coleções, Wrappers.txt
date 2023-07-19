@@ -1,0 +1,89 @@
+Java e java.util: Coleções, Wrappers e Lambda expressions
+
+Estruturas de dados: Precisamos de formas mais enxutas de armazenamento de dados, e para isso existem as estruturas de dados.
+
+1ª Arrays [ ]:
+
+ - Utiliza conchetes para utilizar arrays:
+		Tipo de dado[ ] - Ex: String[]
+
+- Arrays são objetos:
+		 int [] idades = new int [5];
+
+- Arrays começam com 0 (zero);
+
+Internamente, temos um processo que começa com uma pilha de execução, representada pelo método main. Nesta pilha, ou seja, no método, foi criada uma variável idades.
+
+Esta variável é um array, que como vimos, é um objeto. Os objetos ficam armazenados na memória HEAP. Assim, idades é uma referência que aponta para um objeto na memória, capaz de guardar cinco idades.
+
+Utilizamos a variável como referência e precisamos informar a posição que queremos acessar dentro de colchetes ([]). Por exemplo, se quisermos acessar a primeira posição, ela é representada pelo número 0:
+
+		idades[0]
+
+Incializando um array (inserindo dados):
+ 
+		 idades[0] = 29;
+
+	int idade1 = idades[0];
+
+Um array é:
+
+1 - Array é uma estrutura de dados.
+
+2 - Um array é sempre inicializado com os valores padrões. cada posição do array é inicializada com o valor padrão. Qual é esse valor padrão? O tipo do array define. Por exemplo, no array do tipo int o valor padrão é 0, no double o valor padrão é 0.0.
+
+3 - Um array é sempre zero-based (o primeiro elemento se encontra no index 0).
+
+A SINTAXE DO ARRAY
+
+Definimos o tamanho na hora de criar o array.
+
+	double[] precos = new double[5];
+
+ARRAY DE REFERÊNCIA
+
+Sintaxe:
+
+		ContaCorrente[] contas = new ContaCorrente[5];
+
+Padrão de referência de um array de referência  é NULL
+
+FORMA LITERAL
+
+Até agora vimos a forma "classica" de criar um objeto array usando a palavra chave new, por exemplo:
+
+			int[] numeros = new int[5];
+
+numeros[0] = 1;
+numeros[1] = 2;
+numeros[2] = 3;
+numeros[3] = 4;
+numeros[4] = 5;
+
+Usar valores diretamente, menos burocrático, mais direito.
+
+			int[] refs = {1,2,3,4,5};
+
+Usamos as chaves {} para indicar que se trata de um array e os valores já ficam declarados dentro das chaves.
+
+RESUMO:
+
+- Um array é uma estrutura de dados e serve para guardar elementos (valores primitivos ou referências);
+
+- Arrays usam colchetes ([]) sintaticamente;
+
+- Arrays têm um tamanho fixo!
+
+- Um array também é um objeto!;
+
+- Arrays são zero-based (o primeiro elemento se encontra na posição 0);
+
+- Um array é sempre inicializado com os valores padrões;
+
+- Ao acessar uma posição inválida recebemos a exceção ArrayIndexOutOfBoundException;
+
+- Arrays possuem um atributo length para saber o tamanho
+A forma literal de criar uma Array, com o uso de chaves {}.
+
+
+

@@ -264,11 +264,149 @@ SOBRE STRING NO GERAL:
 7 - vimos vários métodos da classe String como trim, charAt, contains, isEmpty, length, indexOf, replace.
 
 
+-------------------------  A CLASSE OBJECT---------------------------------------
+
+ANALISANDOU O SOUT - System.out.println( );
+
+O que é? 
+Visibilidade? Acesso?
+Pacote?
+
+			System.out.println("Alura");
+
+classes no java começa maiúsculo;
+
+método sempre tem parenteses;
+
+Uma referência  que aponta para um objeto: Conta conta = new Conta ();
+
+Tipo Primitivo - Nas aulas anteriores aprendemos que uma variável que representa um primitivo não pode conter pontos, pois um primitivo é apenas um valor que não possui um método associado a ele, pois não é baseado em um classe.
+
+Método não possui acesso estático.
+
+Não confundam sobrecarga com sobrescrita, esta última é relacionada à herança, possui a mesma assinatura e não pode variar nos parâmetros. Sobrecarga: são várias versões do mesmo método.
+
+Static são chamados a partir de uma referência:
+		Conta c = new Conta ( ); // Classe referencia um objeto para cria-lo
+		c.deposito(222); 
+
+System. :
+	- classe, java.lang, acesso public;
+
+.out:
+	- atributo, acesso public, referência (não sabe o tipo da referência), static.
+ 
+No caso, o out é acessado por meio de uma classe, a System. O que significa que há um static dentro da classe System, ou seja, temos um public static, mas ainda não sabemos o tipo da referência.
+
+println( ); :
+	- método, público, não static, sobrecarga, não joga exceções do tipo checked
+
+println(): ele pode receber uma String, mas também um int. Aparentemente, exitem várias versões de um mesmo método, ou seja, muitas sobrecargas.
+
+Funciona com vários tipos de váriáveis como String, Int, Double;
+
+nunca preciso fazer um tratamento de excesão no println.
+
+			CASES
+
+1)
+
+Conta c = new Conta();
+c.CAIXA.getCodigo();
+
+CAIXA é:
+
+1 - CAIXA é um atributo da instância: CAIXA é uma atributo da instância, pois usamos a referência c para acessar o atributo. Se fosse estático a chamada seria:
+			Conta.CAIXA.getCodigo();
+
+2 - CAIXA é uma referência: pois estamos usando o . para chamar o método getCodigo(). Se CAIXA fosso um primitivo não seria possível chamar um método.
+
+3 - CAIXA tem visibilidade pública: pois no enunciado diz que estamos importando as classes corretamente. Isso significa que a classe Conta está dentro de um outro package.
+
+2)
+
+boolean existe1 = Banco.existeBanco("CAIXA");
+boolean existe2 = Banco.existeBanco(394);
+
+1 - existeBanco tem acesso estático: pois usamos a classe Banco para chamar;
+
+2 - existeBanco é um método: as parênteses deixam claro que se trata de um método.
+
+3 - existeBanco é uma forma de sobrecarga: xistem duas versões desse método que variam nos parâmetros, a primeira recebe uma String e a segunda recebe uma valor int.
+
+USANDO A CLASSE OBJECT
+
+Queremos fazer uma classe mãe que é estendida por todas essas classes que estão no primeiro nível; lembre-se que em Java só podemos estender uma classe.Todas as classes se extendem para uma classe mãe: Object. 
+
+Ele é extends automaticamente pelo Java.
+
+Object é o topo de todas as classes. Reutilização de código e polimorfismo. É a referência mais génerica que tem.
+
+HERANÇA:
+
+Herança possui duas características: reutilização de código e polimorfismo. A classe Object no topo da hierarquia, isso significa que também são herdados métodos dessa classe, ou seja, reutilização.
+
+	- Polimorfismo
+
+Para ilustrarmos melhor essa ideia, podemos expressar nosso código de Teste da seguinte maneira: substituindo ContaCorrente, ContaPoupanca e Cliente por Object.
+
+Esse é um bom exemplo de polimorfismo, temos uma referência genérica que se liga a um objeto mais específico. Podemos utilizar tanto a referência mais específica quanto a mais genérica para designar ContaCorrete, ContaPoupanca e Cliente.
+
+	- Reutilização de código
+
+x
+3
+br.com.bytebank.banco.modelo.ContaCorrente@3abfe836
+br.com.bytebank.banco.modelo.ContaPoupanca@2ff5659e
 
 
+Observem que foi impresso o nome da classe em seu full qualified name, mais @3abfe836. De onde vem esse código e quem o implementou? A classe Object; essa classe possui alguma funcionalidade que resulta na produção dessa String.
 
+Essa funcionalidade é um método, afinal, dentro da funcionalidade existe um método encapsulado. Esse método é chamado toString(), e ele foi herdado de Object.
 
+A classe Object é a classe RAIZ do Java:
 
+1 -  Não é preciso deixar explícito na declaração de uma classe que ela deve herdar de Object, porque isso é automático. Não é preciso herda do Object explicitamente, o compilador automaticamente insere a declaração.
+
+2 - Qualquer objeto pode ser referenciado pelo tipo Object, já que ela é a principal. O tipo Object é a forma mais genérica de referenciar um objeto.
+
+3 - Na herança você sempre herda o comportamento de todas classes na hierarquia. Se o Gerente herda do Funcionario e Funcionario herda do Objeto, ambos Gerente e Funcionario são objetos e herdam as funcionalidades da classe Object.
+
+4 - Object possui sim métodos e mesmo sem essa classe o Java seria uma linguagem orientada a objetos.
+
+O MÉTODO toString( );
+
+1 - O método toString() existe para ser sobrescrito. É boa prática sobrescrever o método para dar um significado maior do que a saída padrão desse método.
+
+2 - O método toString() existe para devolver uma informação sobre o estado do objeto. o método toString deve devolver informações sobre o estado do objeto. É útil para a depuração no desenvolvimento.
+
+3 - Não sabemos o endereço do objeto através do toString() (essa informação também não ajudaria em nada).
+
+REVISÃO E CONCLUSÃO
+
+1 - Todas as classes trabalham com a regra de que a classe Object está no topo da hierarquia, sendo esta a classe mãe. Não é necessário escrever extends Object nas classes filhas como Cliente, pois o compilador insere essa informação automaticamente.
+
+2 - A classe Object foi inventada a partir do conceito de que de que tudo é um objeto. Com isso, conseguimos algumas vantagens relacionadas à 
+herança, 
+como polimorfismo e
+ reutilização de código.
+
+3 - Nós vimos apenas um método, mas existem muitos outros que dependem da classe Object, vários laços foram escritos de forma dependente dessa classe, pois são utilizados alguns métodos básicos que já foram implementados dentro dessa classe, então todos as classes associadas à Object terão a mesma funcionalidade. O exemplo que utilizamos no curso foi o método println(), que como podemos observar na classe Teste, funciona com qualquer tipo de referência, afinal todas são compatíveis com a classe Object.
+
+4 - Não é possível fazer muita coisa com o Object, por exemplo, na classe Teste escreveremos cc, que é uma referência do tipo Object, e chama alguns outros métodos genéricos, como toString().
+
+5 - valueOf() verificaremos que ele também é dependente de Object, o tipo mais genérico o possível. Ao longo do código existe um operador ternário - que é basicamente um if mais enxuto - que verifica se o objeto é nulo, caso sim, é devolvido null como String, se não (essa condicional é representada pelos dois pontos :) é devolvido obj.toString().
+
+			public static String valueOf(Object obj) {
+  				  return (obj == null ) ? "null" : obj.toString();
+				}
+6 - toString() da classe Object é ser sobrescrito, assim como a maioria dos outros métodos "querem" ser sobrescritos pelos filhos, com isso eles ganham mais significado. É o que fizemos na classe Conta, para procurarmos rapidamente o método, acionamos o atalho "Ctrl + O" e o procuramos dentro da classe e observamos a atribuição de significado.
+
+7 -  existe um universo com muitas classes que que se baseiam em métodos definidos na classe Object, e o desenvolvedor deve sobrescrever tais métodos para atribuir maior significado a eles. Analisamos o método println() que internamente chama toString(), mais genérico do que, por exemplo, o java.lang.
+
+8 - Existem no mínimo dois pacotes super importantes que veremos nos próximos cursos, como java.util, em que encontraremos as coleções, conjuntos e mapas. Teremos, ainda, o java.io, que contém as classes que se preocupam com a leitura e escrita de dados, streams, readers e writers.
+
+9 -  dominar a classe Object para conseguirmos trabalhar, principalmente, com o java.util e conhecermos outros métodos como hashCode() e equals() que deverão ser sobrescritos.
 
 
 
