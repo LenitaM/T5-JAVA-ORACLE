@@ -49,7 +49,7 @@ Isso pode ser chamado também de type cast:
         Cliente cliente = new Cliente();
         referencias[2] = cliente;
 
-        System.out.println(referencias.getNome()); //precisa fazer type cast
+        //System.out.println(referencias.getNome()); //precisa fazer type cast
         //getNome() não pertence ao object.
 
 

@@ -144,9 +144,44 @@ A resposta é NÃO. O cast explicito só funciona se ele for possível, mas há 
 
 Como o cliente não ESTENDE a classe Conta ou IMPLEMENTA uma INTERFACE do tipo Conta, é impossível esse cast funcionar, pois uma referência do tipo Conta jamais pode apontar para um objeto do tipo Cliente.
 
-A certificação Java tem muitas dessas perguntas sobre cast possível, impossível, explícito e implícito. Se você pretende tirar essa certificação, vale a pena estudar esse assunto com muita calma.
+A certificação Java tem muitas dessas perguntas sobre cast possível, impossível, explícito e implícito. Se você pretende tirar essa certificação, vale a pena estudar esse assunto com muita calma.git init
+
+EXEÇÕES DO TYPE CAST
+
+SOBRE ClassCastException
+
+1 - é do pacote java.lang
+2 - É lançada quando o type cast falha
+3 - A ClassCastException é unchecked pois estende RuntimeException.
+
+ENTENDENDO O ARRAY STRING ARGS
+
+Acessa pelo terminal cmd 
+1 - ls = saber onde está a pasta (está dentro da pasta bin)
+2 - cd bin = acessar a pasta bin
+3 - ls = mostra a pasta
+4 - java joga o caminho da pasta = inicializa a maquina virtual
+5 - Já está funcionando no terminal
+6 - pode passar parametros e coloca dentro da String acessada pelo terminal
 
 
+Strings [ ] = Ele existe para que possamos passar parâmetros a partir do terminal
 
+
+Assim, temos uma forma de interagir com o programa Java a partir da linha de comando. Chamamos a aplicação e, simultaneamente, é possível definirmos parâmetros.
+
+Isso tem várias utilidades. Pode servir, por exemplo, para habilitar alguma funcionalidade, entre várias outras configurações possíveis.
+
+RESUMO:
+
+# uma array do tipo Object pode guardar qualquer tipo de referência;
+
+# quando convertemos uma referência genérica para uma referência mais específica é preciso usar um type cast;
+
+# o cast só compila quando é possível, mesmo assim pode falhar na hora de rodar;
+
+# quando o type cast falha podemos receber uma ClassCastException;
+
+# para receber valores ao chamar o programa Java na linha de comando podemos usar o array String[] no método main;
 
 
