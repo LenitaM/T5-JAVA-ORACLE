@@ -184,4 +184,147 @@ RESUMO:
 
 # para receber valores ao chamar o programa Java na linha de comando podemos usar o array String[] no método main;
 
+ARRAYLIST E GENERICS
+
+	Adapter para Arrays
+
+Desvantagens de usar Array:
+
+1 - Sintaxe fora do padrão "OO Java". Os arrays realmente têm a sua própria sintaxe, o que dificulta a legibilidade do código.
+
+2 - Array tem um tamanho fixo (não pode crescer dinamicamente). Uma vez criado, o array sempre terá o mesmo tamanho de elementos. Isso é muito ruim quando não sabemos exatamente quantos elementos precisamos guardar.
+
+3 - Array não sabe quantas posições estão ocupadas (apenas tamanho total). Isso é uma grande desvantagem. Não queremos saber quantos elementos um array pode ter, mas sim quantos elementos realmente já existem no array.
+
+4 - Array é uma estrutura considerada rápida. Pensando no desempenho o array é a estrutura que se destaca.
+
+		ArrayList
+
+O pacote fundamental do java: JAVA.UTIL
+
+Sobre o ArrayList:
+
+a) Guarda referências.
+
+b) É do pacote java.util.
+
+c) Usa internamente um array.
+
+d) Ao inicializar NÃO é preciso definir o tamanho
+
+O java.util.ArrayList é realmente um guardador de referências e usa um array internamente.Correto, o java.util.ArrayList é realmente um guardador de referências e usa um array internamente.
+
+Adicionando referências no ArrayList o elemento é adicionado no fim da lista.
+
+Elementos que o ArrayList pode guardar o limite é a memória da JVM. O único limite é a memória da JVM.
+
+	
+	Introdução ao GENERICS < >
+
+Os generics entraram na versão 1.5 na plataforma Java e foram levemente melhorados no Java 1.7. 
+
+Como não misturar Classes e guardar um só tipo referências, exemplo: conta, cliente etc, exemplo:
+
+ArrayList <Conta> lista = new ArrayList<Conta>();
+
+< > = chamado de GENERICS
+
+Antes de especificar o tipo de dados guardados pelo array, o for para saber as contas salvas é esse:
+
+for(Object oRef : lista) { 
+            System.out.println(oRef);
+}
+
+Após especificar o tipo de dados que o Array vai guardar o for precisa mudar para o console exibir as contas dentro do ArrayList:
+
+
+for(Conta conta : lista) { 
+            System.out.println(conta);
+}
+
+Agora ele não vai exibir todos os dados salvos (Object) independente da classe, exemplo Cliente, Conta etc, mas só os dados salvos no ArrayList da Conta.
+
+
+Código legado
+
+
+ArrayList lista = new ArrayList();
+Cliente cliente = new Cliente();
+lista.add(cliente);
+
+Nova forma de fazer: 
+
+		ArrayList<Cliente> lista = new ArrayList<Cliente>();
+
+Atualização do java.1.7:
+
+parametrizamos a ArrayList usando <>. Há uma variação/simplificação que entrou no Java 1.7. O código abaixo é equivalente a alternativa:
+
+			ArrayList<Cliente> lista = new ArrayList<>();
+
+Beneficios de usar o Generics < > 
+
+1 - Antecipar problemas de casts no momento de compilação. Antecipar problemas de casts no momento de compilação:
+		ArrayList<String> lista = new ArrayList<String>(); 
+		lista.add("Nico");
+		Conta c = lista.get(0); //nao compila
+//erro pois tem erro no tipo: .add e não .get
+
+2 - Evitar casts excessivos. Uma vez parametrizada a lista, não precisamos mais o cast
+
+		Cliente ref = (Cliente) lista.get(0); // desnecessário com generics
+
+3 - O código mais legível, já que fica explícito o tipo dos elementos. Na criação da lista fica claro qual a intenção. Por exemplo, na declaração abaixo está bem claro que a lista guarda Strings:
+
+		ArrayList<String> nomes = new ArrayList<String>(); 
+
+4 - Em geral, o compilador Java não otimiza o código. Isso é a tarefa da JVM. Os generics ajudam na hora de escrever o código, na hora de rodar não há impacto.
+
+
+OUTRAS FORMAS DE INICIALIZAÇÃO
+
+		Lista com capacidade predefinida
+
+ArrayList é um array dinâmico, ou seja, por baixo dos panos é usado um array, mas sem se preocupar com os detalhes e limitações.
+
+Agora pense que você precisa criar uma lista representando todos os 26 estados do Brasil. Você gostaria de usar um ArrayList para "fugir" do array, mas sabe que o ArrayList cria um array automaticamente, do tamanho que a classe acha conveniente.
+
+Será que não há uma forma de criar essa lista já definindo o tamanho do array? Claro que tem e é muito simples. O construtor da classe ArrayList é sobrecarregado e possui um parâmetro que recebe a capacidade:
+
+		ArrayList lista = new ArrayList(26); //capacidade inicial
+
+ArrayList lista = new ArrayList(26); //capacidade inicial
+
+		Lista a partir de outra
+
+Outra forma de inicializar uma lista é baseado na outra que é muito comum no dia a dia. Para tal a ArrayList possui mais um construtor que recebe a lista base:
+
+ArrayList lista = new ArrayList(26); //capacidade inicial
+lista.add("RJ");
+lista.add("SP");
+//outros estados
+ArrayList nova = new ArrayList(lista); //criando baseado na primeira lista
+
+RESUMO
+
+Nessa aula começamos a falar sobre lista e conhecemos a classe java.util.ArrayList. Aprendemos:
+
+# que a classe java.util.ArrayList encapsula o uso do array e oferece vários métodos de mais alto nível
+
+# que uma lista guarda referencias
+
+# como usar métodos size, get, remove
+
+# como usar a sintaxe foreach para iterar a ArrayList
+
+# que os generics parametrizam classes
+
+# que no caso da ArrayList podemos definir o tipo dos elementos através de generics
+
+
+
+
+
+
+
 
