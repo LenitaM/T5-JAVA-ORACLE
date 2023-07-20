@@ -218,6 +218,46 @@ Adicionando referências no ArrayList o elemento é adicionado no fim da lista.
 
 Elementos que o ArrayList pode guardar o limite é a memória da JVM. O único limite é a memória da JVM.
 
+Lados bons e ruins do ArrayList:
+
+Positivos:
+
+1 - temos as características de um array, ou seja, o acesso fácil a qualquer elemento aleatório. Se adicionamos elementos em um array, e queremos acessar qualquer posição, não há nenhum trabalho a mais para que façamos isso, esse acesso pode ser feito diretamente pelo índice de forma bastante facilitada.
+
+2 -  adicionar novos elementos em um array é um processo simples, desde que não seja ultrapassada sua capacidade de armazenamento. Se desejarmos adicionar um novo elemento, o ArrayList sabe automaticamente qual a próxima posição livre, e ele é inserido - simples. Iteração também é algo tranquilo de se fazer em um array.
+
+Negativos:
+
+1 - temos que a sua capacidade é limitada ao seu tamanho no momento da criação, ou seja, uma vez que sua capacidade acaba, é necessária a criação de um novo array, com capacidade maior, e copiar os elementos daquele para este armazenamento.
+
+2 - se quisermos remover um elemento, o array não permitirá que existam "buracos" em sua lista e, sendo assim, moverá todas as referências de modo que todos os índices serão modificados. Para esse tipo de operação, o ArrayList não é tão eficiente.
+
+	Sendo assim se usa ArrayList para:
+
+Se o objetivo for simplesmente adicionar elementos, para depois fazer a iteração, o ArrayList é sem dúvida o mais indicado. É esse o tipo mais comum de situação e, normalmente, o uso mais comum. Contudo, é necessário sabermos destas ressalvas.
+
+A alternativa para o ArrayList é o LinkedList:
+
+		LinkedList
+
+1 - Ele não utiliza um array internamente.
+
+2 - Isso significa que, quando falamos de List nem sempre estamos lidando com arrays. Uma lista significa, simplesmente, que estamos armazenando elementos em sequência, ou seja, o primeiro elemento adicionado também é o primeiro que será retornado. Além disso, temos um índice, e métodos que trabalham com ele. Por exemplo, o método get(), que podemos utilizar para obter determinado elemento de uma posição em particular.
+
+3 - No LinkedList temos estas mesmas características, sequência, ordem de inserção e índice. Entretanto, ela não funciona com um array internamente.
+
+4 - lista duplamente encadeada: Seu funcionamento ocorre da seguinte forma: ao adicionarmos, por exemplo, cc1 e, em seguida, cc2, ela se lembrará do elemento que foi adicionado anteriormente, ou seja, cc2 se lembra de cc1, cc3 de cc2, e assim por diante. Da mesma forma, o primeiro elemento se lembra daquele que o segue, ou seja, cc1 lembra de cc2, cc2 de cc3, e assim sucessivamente.
+Sabemos que estamos no final da lista quando atingimos um elemento que não possui um próximo.
+
+5 - Neste tipo de lista, apagar um elemento não causa grande impacto à ela como um todo, ela o descarta e substitui com o seguinte e o anterior. Supondo que temos cc1, cc2 e cc3, ao apagarmos cc2, simplesmente cc1 e cc3 passarão a ser diretamente conectados.
+
+6 - utilizando a LinkedList em nossa classe TesteArrayListEquals. Isso será complicado, uma vez que há duplicidade de diversos métodos, como add(), contains(), size(), remove() e equals().
+
+Ponto Negativo:
+
+7 - Mas e se quisermos acessar o último elemento da lista, como podemos acessá-lo? Temos que iniciar no primeiro elemento, e verifica-los sucessivamente, até atingirmos o ponto onde não há mais continuidade. Diferentemente do array, não temos como acessar uma determinada posição diretamente. Se quisermos, por exemplo, acessar a posição 3, temos que iniciar na primeira e seguir, até atingirmos a desejada. Isso faz com que a iteração seja algo negativo na LinkedList.
+
+
 	
 	Introdução ao GENERICS < >
 
@@ -320,6 +360,79 @@ Nessa aula começamos a falar sobre lista e conhecemos a classe java.util.ArrayL
 # que os generics parametrizam classes
 
 # que no caso da ArrayList podemos definir o tipo dos elementos através de generics
+
+		Método equals()
+
+O método equals, junto aos métodos toString e hashCode, é um dos métodos fundamentais da classe Object.
+
+Sintaxe: 			public boolean equals(Object ref)
+
+ é publico, devolve boolean e recebe um Object.
+
+Sobre o equals( ) :
+
+1 - É definido na classe Object.
+
+2 - A implementação padrão compara as referências. A implementação do método equals da classe Object compara apenas as referências.
+
+3 - Devemos devolver false quando os objetos não forem iguais.
+
+4 - Devemos sobrescrever para definir o critério de igualdade. Devemos sobrescrever o método equals para definir a igualdade do objeto.
+Em geral, os métodos equals, toString e hashCode existem para sobrescrita.
+
+
+	SOBRE LISTAS
+
+1 - Todas as listas garantem a ordem de inserção. As listas garantem a ordem de inserção. Isso significa que ao iterar recebemos os elementos na mesma ordem que eles foram inseridos.
+
+2 - List é uma interface, a ArrayList e a LinkedList são implementações
+
+3 - Todas as listas possuem um índice. as listas sempre possuem um índice (podemos acessar o elemento através da posição).
+Além disso, existe mais uma característica: lista aceitam elementos duplicados, mas sobre isso falaremos um pouco mais na frente.
+
+4 - É possível definir um tipo em uma lista, ela sempre aceita qualquer objeto. Para tal existem os Generics ().
+
+	TODAS AS LISTAS POSSUEM UM ÍNDICE
+
+LinkedList e ArrayList são duas implementações diferentes da interface List. A LinkedList é uma lista duplamente "linkada" e a ArrayList representa um array com redimensionamento dinâmico.
+
+Cada uma das implementações tem as suas vantagens e desvantagens (na dúvida escolha ArrayList). Relacione as características as implementações:
+
+ArrayList:
+
+Positivo:
+A) acesso fácil e performático pelo índice.
+
+Negativo:
+C) elementos precisam ser copiados quando não há mais capacidade.
+
+LinkedList:
+
+Positivo:
+B) inserção e remoção performática em qualquer posição, também no início.
+
+Negativo:
+D) acesso mais demorado pelo índice, é preciso pesquisar os elementos;
+
+RESUMO 
+
+# como implementar o método equals para definir a igualdade;
+
+# que o método equals é utilizado pelas listas;
+
+# que existe mais uma lista, a java.util.LinkedList;
+
+# a diferença entre ArrayList e LinkedList;
+
+# a interface java.util.List que define os métodos da lista;
+
+
+
+
+
+
+
+
 
 
 

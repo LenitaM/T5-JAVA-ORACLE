@@ -7,7 +7,7 @@ import modelo.ContaCorrente;
 
 import java.util.ArrayList;
 
-public class Teste {
+public class TesteArrayList {
 
     //Guardador de Contas usando o java.util
 
@@ -72,8 +72,8 @@ public class Teste {
 
         //Lista a partir de outra
         ArrayList listaComLimite2 = new ArrayList(26); //capacidade inicial
-        lista.add(cc5); //apenas para fins demonstrativos
-        lista.add(cc5);
+       // lista.add(cc5); //apenas para fins demonstrativos
+       // lista.add(cc5);
 //outros estados
         ArrayList novaLista = new ArrayList(lista); //criando baseado na primeira lista
 

@@ -1,7 +1,9 @@
 package modelo;
 
+//Onde fica a regra de negócios:
+
 /*A classe modelo.Conta é a mãe, e é abstrata, por sua vez, as classes modelo.ContaCorrente e modelo.ContaPoupanca a herdam.*/
-public abstract class Conta {
+public abstract class Conta extends Object {
 
    protected double saldo;
     private int agencia;
@@ -89,4 +91,21 @@ public abstract class Conta {
         // Não usa super pq a classe em cima da Conta é Object e ela n possuem esse método
 
     }
+
+    //equals() - método que a gente construiu antes, compara referencias
+    @Override //sobreescreve
+    public boolean equals(Object ref) { //equals em sua contrução só recebe object
+//sobreescrece o método equals da classe Object
+        Conta outraConta = (Conta) ref; //precisa fazer um type cast, sair de uma ref generica para uma ref especifica
+
+        if(this.agencia != outraConta.agencia) {
+            return false;
+        }
+        if (this.numero != outraConta.numero) {
+            return false;
+        }
+        return true;
+    }
+
+
 }
