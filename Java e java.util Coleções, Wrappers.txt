@@ -86,4 +86,67 @@ RESUMO:
 A forma literal de criar uma Array, com o uso de chaves {}.
 
 
+CAP 2: GUARDANDO QUALQUER REFERÊNCIA
+
+Array do tipo OBJECT
+
+Conta[] contas2 = new Conta[5]; - Contas do nível mais genérico 
+
+Type cast 
+
+transforma a ref tipo (génerica) conta para um ref (mais especifica) tipo conta popança.
+
+			 ContaPoupanca ref = (ContaPoupanca) contas[1];
+
+Array que guarda qualquer tipo de dados:
+
+	Object [ ] banco = new Object [5];	
+
+CAST IMPLÍCITO E EXPLÍCITO DE PRIMITIVOS
+
+o primeiro do mundo de primitivos:
+
+int numero = 3;
+double valor = numero; //cast implícito
+
+Repare que colocamos um valor da variável numero (tipo int) na variável valor (tipo double), sem usar um cast explícito. Isso funciona? A resposta é sim, pois qualquer inteiro cabe dentro de um double. Por isso o compilador fica quieto e não exige um cast explicito, mas nada impede de escrever:
+
+	int numero = 3;
+	double valor = (double) numero; //cast explícito
+
+
+Agora, o contrário não funciona sem cast, uma vez que um double NÃO cabe em um int:
+
+		double valor = 3.56;
+		int numero = (int) valor; //cast explicito é exigido pelo compilador
+
+Nesse caso o compilador joga todo valor fracional fora e guarda apenas o valor inteiro.
+
+	CAST IMPLÍCITO E EXPLÍCITO DE REFERÊNCIAS
+
+*Nas referências, o mesmo princípio se aplica. Se o cast sempre funciona não é necessário deixá-lo explícito*
+
+		ContaCorrente cc1 = new ContaCorrente(22, 33);
+		Conta conta = cc1; //cast implicito 
+
+Aqui também poderia ser explícito, mas novamente, o compilador não exige pois qualquer ContaCorrente é uma Conta:
+
+		ContaCorrente cc1 = new ContaCorrente(22, 33);
+		Conta conta = (Conta) cc1; //cast explícito mas desnecessário 
+
+TYPE CAST EXPLÍCITO SEMPRE FUNCIONA?
+
+A resposta é NÃO. O cast explicito só funciona se ele for possível, mas há casos em que o compilador sabe que um cast é impossível e aí nem compila, nem com type cast.
+
+		Cliente cliente = new Cliente();
+		Conta conta = (Conta) cliente; //impossível, não compila
+
+
+Como o cliente não ESTENDE a classe Conta ou IMPLEMENTA uma INTERFACE do tipo Conta, é impossível esse cast funcionar, pois uma referência do tipo Conta jamais pode apontar para um objeto do tipo Cliente.
+
+A certificação Java tem muitas dessas perguntas sobre cast possível, impossível, explícito e implícito. Se você pretende tirar essa certificação, vale a pena estudar esse assunto com muita calma.
+
+
+
+
 
