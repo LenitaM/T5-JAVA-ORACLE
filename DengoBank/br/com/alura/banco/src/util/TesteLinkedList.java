@@ -36,6 +36,8 @@ public class TesteLinkedList {
 
     public static void main(String[] args) {
 
+        //Sintaxe de um Vector - List<Conta> lista = new Vector<Conta>();//thread safe
+
         //todos aqueles que pretendem ser uma lista, devem contar com um método add() de alguma forma, o mesmo para o remove()
        List<Conta> lista = new ArrayList<Conta>(); //Lista java.util
        //Isso nos leva à conclusão de que existe uma interface para isso, ela se chama List
