@@ -524,6 +524,14 @@ RESUMO
 
 Autoboxing e Unboxing
 
+A transformação do tipo primitivo para o objeto referência acontece automaticamente, e é chamada de autoboxing. O caminho inverso é chamado de unboxing.
+
+wrappers:
+
+As classes que existem para cada tipo primitivo se chamam wrappers. Isso porque elas "embrulham" o tipo primitivo do objeto, que internamente guarda o valor primitivo. Elas existem para que haja compatibilidade com as coleções, nos permitindo, por exemplo, guardar números dentro de uma lista.
+O int pertence a biblioteca java.lang.Integer.
+O double pertence a biblioteca java.lang.Double
+
 Autoboxing = transformação de um tipo primitivo para Objeto no Java, realizado automaticamente. 
 
 	MÉTODOS DA CLASSE INTEGER
