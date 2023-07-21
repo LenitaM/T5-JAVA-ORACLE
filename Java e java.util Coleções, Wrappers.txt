@@ -522,6 +522,13 @@ RESUMO
 	AS CLASSES WRAPPERS
 
 
+Autoboxing e Unboxing
+
+Autoboxing = transformação de um tipo primitivo para Objeto no Java, realizado automaticamente. 
+
+	MÉTODOS DA CLASSE INTEGER
+
+
 
 
 
