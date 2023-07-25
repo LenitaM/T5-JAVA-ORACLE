@@ -529,23 +529,91 @@ A transformação do tipo primitivo para o objeto referência acontece automatic
 wrappers:
 
 As classes que existem para cada tipo primitivo se chamam wrappers. Isso porque elas "embrulham" o tipo primitivo do objeto, que internamente guarda o valor primitivo. Elas existem para que haja compatibilidade com as coleções, nos permitindo, por exemplo, guardar números dentro de uma lista.
+
 O int pertence a biblioteca java.lang.Integer.
+
 O double pertence a biblioteca java.lang.Double
 
 Autoboxing = transformação de um tipo primitivo para Objeto no Java, realizado automaticamente. 
 
+Tipo Primitivo (int) >>> wrapper (java.lang.Integer) = autoboxing
+Tipo Primitivo (int) <<< wrapper  (java.lang.Integer) = unboxing
+
+
 	MÉTODOS DA CLASSE INTEGER
 
+No arquivo tem sobre .valueOf(); intValue(); .valueOf(); .parseInt();
+
+	Parsing - O programa foi capaz de transformar o String s em um inteiro int.
+
+Isto é muito comum em situações onde temos um formulário, em que são digitados determinados valores. Estes, normalmente, vêm como Strings, e é uma tarefa comum do desenvolvedor transformá-los deste tipo para algum outro específico.
+
+Além de termos um objeto e referência Integer, podemos também ter um método que cria o primitivo a partir da String diretamente:
+
+		int numero = Integer.parseInt(s);
+
+A classe Integer possui diversos métodos auxiliares, mas alguns que são essenciais são o valueOf(int i), que corresponde ao autoboxing, intValue(), para o unboxing, valueOf(String s) e parseInt().
+
+Temos ainda um método que nos permite transformar um Integer para outros primitivos, por exemplo, em um double, neste caso, utilizamos o doubleValue():
+
+		 System.out.println(idadeRef.doubleValue());
+
+Valores mínimos e máximos para que sirvam de parâmetros em alguma regra de negócio específica'. Para sabermos, por exemplo, o valor máximo, podemos utilizar MAX_VALUE:
+
+		System.out.println(Integer.MAX_VALUE);
+
+Cada Integer é capaz de um certo limite de armazenamento, de 4 Bytes. Assim, executaremos a classe, e temos o seguinte resultado no console:
+
+29.0
+2147483647
+12
+
+Para descobrirmos o valor mínimo, utilizamos o MIN_VALUE: 
 
 
+	System.out.println(Integer.MIN_VALUE);
+
+Executando a classe, temos o seguinte resultado:
+
+29.0
+-2147483648
+12
+
+Podemos, ainda, descobrir o tamanho do Integer, utilizando o SIZE:
+
+		System.out.println(Integer.SIZE);
+
+Executaremos a classe, e temos o seguinte resultado no console:
 
 
+29.0
+2147483648
+-2147483648
+32
+12
 
+Indicando um tamanho de 32 bits. Se quisermos saber a quantidade de bytes, utilizamos o BYTES:
 
+           System.out.println(Integer.BYTES);
 
+Executaremos a classe, e temos o seguinte resultado no console:
 
+29.0
+2147483648
+-2147483648
+32
+4
+12
 
+Indicando um total de 4 Bytes, como havia sido mencionado anteriormente.
 
+Olhar a documentação com mais métodos no java docs da oracle.
 
+	O que são Wrappers?
 
+1 - rappers fazem parte do pacote java.lang e não fazem parte da API de coleção (mas são úteis para tal).
+
+2 -  os wrappers são classes
+
+3 - São classes que contém funcionalidades e encapsulam a variável de tipo primitivo! criamos objetos dessas classes para envolver ou embrulhar uma valor primitivo. Há várias funcionalidades nessas classes que ajudam no dia a dia que veremos no próximo video.
 
