@@ -5,9 +5,7 @@ import modelo.Conta;
 import modelo.ContaCorrente;
 import modelo.ContaPoupanca;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class TesteComparatorString {
 
@@ -52,11 +50,24 @@ public class TesteComparatorString {
                 System.out.println(conta);
             }
 
-            NumeroDaContaComparator comparator = new NumeroDaContaComparator();
-            TitularDaContaComparator titularDaContaComparator = new TitularDaContaComparator();
+            /*Percebemos que a referência de cada um dos comparadores é utilizada somente para o método sort(),
+            sendo assim, é comum que o construtor new seja inserido diretamente como parâmetro deste método*/
 
-            lista.sort(comparator);
-            lista.sort(titularDaContaComparator);
+             //Forma Encontrada Atualmente                                      Não encontra desse forma
+           // lista.sort(new NumeroDaContaComparator());   //NumeroDaContaComparator comparator = new NumeroDaContaComparator();
+           // lista.sort(new TitularDaContaComparator()); //TitularDaContaComparator titularDaContaComparator = new TitularDaContaComparator();
+
+
+            /*Como usar o método sort sem recer uma instancia (new)*/
+            lista.sort(null); //má prática
+
+            //FORMA LEGADA (antes da atualização implmentação do método sort()
+           // Collections.sort(lista, new TitularDaContaComparator());
+            Collections.reverse(lista); //maior elemento para o menor, inverte a ordenação
+
+            //Ir na classe conta implements - ORDEM NATURAL
+            Collections.sort(lista); //método que não recebe um comparator
+            //Ordem Natural: qualquer objeto da lista pode definir sua própria ordem, caso ela n tenha sido definida o próprio java defini sua ordenação de acordo com ela
 
             System.out.println("---------");
 
@@ -70,12 +81,20 @@ public class TesteComparatorString {
 
     }
 
+    //Criar as classes para fazer a comparação
+
     class NumeroDaContaComparator implements Comparator<Conta> {
 
         @Override
         public int compare(Conta c1, Conta c2) {
 
-            if(c1.getNumero() < c2.getNumero()) {
+            //simplificar modo 1
+            //return c1.getNumero() - c2.getNumero();
+
+            //Mais elegante
+            return Integer.compare(c1.getNumero(), c2.getNumero());
+
+            /*if(c1.getNumero() < c2.getNumero()) {
                 return -1;
             }
 
@@ -83,7 +102,7 @@ public class TesteComparatorString {
                 return 1;
             }
 
-            return 0;
+            return 0;*/
         }
     }
 

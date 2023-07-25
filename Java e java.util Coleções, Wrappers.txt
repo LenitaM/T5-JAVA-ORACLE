@@ -685,6 +685,56 @@ Lembrando que, se não definirmos nenhum construtor para a classe, é utilizado 
  //Ordenação de listas
         lista.sort(comparator);
 
-	COMPARANDO STRINGS
+	
+ - Interfaces para ordenar
+
+		No mundo Java existem duas interfaces para definir o critério de ordenação dos elementos de uma lista.
+
+As interfaces são:
+
+1 - java.lang.Comparable = para definir a ordem natural dos elementos!
+
+2 - java.util.Comparator = o comparator é um parâmetro do método sort da lista e da classe Collections.
+
+
+	Ordem Natural:
+
+1 - É a ordem definida pelo próprio elemento da lista. o nosso exemplo a classe Conta define o seu próprio critério de ordenação implementando a interface java.lang.Comparable.
+
+Nesse caso não é utilizado nenhum Comparator.
+
+2 - o nosso exemplo a classe Conta define o seu próprio critério de ordenação implementando a interface java.lang.Comparable.
+
+Nesse caso não é utilizado nenhum Comparator.
+
+3 - a ordem natural é definida pelo próprio elemento da lista através da interface java.lang.Comparable.
+
+
+COLLECTIONS
+
+Para inverter a ordem de lista você pode usar o método reverse da classe Collections: 
+
+			Collections.reverse(lista);
+
+Para embaralhar existe o método shuffle e para rotacionar tem o método rotate:
+
+			Collections.shuffle(lista);
+			Collections.rotate(lista, 5); //rotacionar 5 posicoes
+
+
+REUSMO
+
+# para ordenar uma lista é preciso definir um critério de ordenação;
+
+# há duas formas de definir esse critério;
+	pela interface Comparator
+	pela interface Comparable (ordem natural);
+
+# o algoritmo de ordenação já foi implementado
+	na lista no método sort
+	na classe Collections pelo método sort;
+
+# a classe Collections é uma fachada com vários métodos auxiliares para trabalhar com as coleções, principalmente listas
+
 
 

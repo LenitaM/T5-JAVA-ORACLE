@@ -3,7 +3,7 @@ package modelo;
 //Onde fica a regra de negócios:
 
 /*A classe modelo.Conta é a mãe, e é abstrata, por sua vez, as classes modelo.ContaCorrente e modelo.ContaPoupanca a herdam.*/
-public abstract class Conta extends Object {
+public abstract class Conta extends Object  implements Comparable <Conta>{ //Implementação de uma Ordem Natural e tem generics <> comparar +1 conta
 
    protected double saldo;
     private int agencia;
@@ -23,7 +23,12 @@ public abstract class Conta extends Object {
     }
 
 
+    //Ordem Natural 3 passo = definir um método compareTo()
+    @Override
+    public int compareTo(Conta outra) {
 
+        return Double.compare(this.saldo, outra.saldo); //dentro da classe tenho acesso ao atributo n precisa por getSaldo
+    }
 
     public  abstract void deposita(double valor);
 
@@ -86,7 +91,7 @@ public abstract class Conta extends Object {
 
     @Override
     public String toString() {
-        return "Número: " + this.numero + ", Agencia: " + this.agencia;
+        return "Número: " + this.numero + ", Agencia: " + this.agencia + ", Saldo:  " + this.saldo;
         //agora os filhos irão mudar tb pq os dois usam o método de object toString( );
         // Não usa super pq a classe em cima da Conta é Object e ela n possuem esse método
 
