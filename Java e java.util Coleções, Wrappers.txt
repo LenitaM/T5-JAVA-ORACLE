@@ -617,3 +617,47 @@ Olhar a documentação com mais métodos no java docs da oracle.
 
 3 - São classes que contém funcionalidades e encapsulam a variável de tipo primitivo! criamos objetos dessas classes para envolver ou embrulhar uma valor primitivo. Há várias funcionalidades nessas classes que ajudam no dia a dia que veremos no próximo video.
 
+
+	A CLASSE NUMBER<
+
+Tipo primitivo						Wrappers
+ 
+(8 bytes) doube 		<< >>		java.lang.Double
+
+(4 bytes) float			<< >>		java.lang.Float
+
+(8 bytes) long			<< >> 		java.lang.Long
+
+(4 bytes) int			<< >>		java.lang.Integer
+
+(2 bytes) short		<< >>		java.lang.Short
+
+(1 byte) byte			<< >>		java.lang.Byte
+
+(2 bytes) char			<< >>		java.lang.Character
+
+	boolean 			<< >>		java.lang.Boolean
+
+Classe Mãe dos Tipos Primitivos: java.lang.Number
+
+Suas filhas são java.lang.Double; java.lang.Float; java.lang.Long;  java.lang.Integer; java.lang.Short; java.lang.Byte.
+
+RESUMO
+
+Nessa aula focamos nas classes WRAPPERS e aprendemos que
+
+# para cada primitivo existe uma classe chamada Wrapper;
+
+# para guardar um primitivo numa coleção é preciso criar um objeto que embrulha o valor;
+
+# a criação do objeto Wrapper é chamada de autoboxing;
+
+# a retirada do valor primitivo do objeto Wrapper é chamada de unboxing;
+
+# autoboxing e unboxing acontecem automaticamente;
+
+# as classes wrapper possuem vários métodos auxiliares, por exemplo para o parsing;
+
+# todas as classes wrappers que representam um valor numérico possuem a classe java.lang.Number como mãe
+
+

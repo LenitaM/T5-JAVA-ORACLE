@@ -3,7 +3,7 @@ package teste;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Teste {
+public class TesteWrapperInteger {
 
     public static void main(String[] args) {
 
@@ -41,7 +41,7 @@ public class Teste {
 
         System.out.println(Integer.BYTES); //Se quisermos saber a quantidade de bytes, utilizamos o BYTES
 
-        
+
 
 
         //Pode chamar métodos agora, a partir dessa referencia
