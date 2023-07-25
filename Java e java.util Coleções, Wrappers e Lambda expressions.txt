@@ -660,31 +660,4 @@ Nessa aula focamos nas classes WRAPPERS e aprendemos que
 
 # todas as classes wrappers que representam um valor numérico possuem a classe java.lang.Number como mãe
 
-	ORDENANDO LISTAS
-
-.sort(comparator) = método de definição de ordem de lista com comparator que são critérios de ordenação.
-
-		Comparator:
-
-Sintaxe do método
-
-	@Override
-        public int compare(Conta arg0, Conta arg1) {
-            // TODO Auto-generated method stub
-            return 0;
-        }
-
-Apenas por motivos de organização, alteramos os valores dos retornos para -1 e 1, respectivamente. As regras do método compare() podem ser encontradas na documentação Java, mas podemos ver os detalhes pertinentes à ele, com o cursor posicionado sobre seu nome.
-
-Nosso próximo passo será criar uma instância da classe NumeroDaContaComparator, para isso, criaremos um objeto desta classe.
-Lembrando que, se não definirmos nenhum construtor para a classe, é utilizado o construtor padrão. Uma vez instanciada, podemos inseri-la no método sort():
-
-
-	NumeroDaContaComparator comparator = new NumeroDaContaComparator();
-        
- //Ordenação de listas
-        lista.sort(comparator);
-
-	COMPARANDO STRINGS
-
 

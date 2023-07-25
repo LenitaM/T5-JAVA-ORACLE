@@ -23,7 +23,7 @@ public class TesteOutrosWrappers {
         System.out.println(bRef.booleanValue()); //unboxing
 
         //Classe mãe: java.lang.Number
-        
+
         Number numero = Integer.valueOf(29); //pode usar ela para integer, double, int, float, long, short, byte
 
         Number refNumero = Float.valueOf(29.9f); //tem que por f para float

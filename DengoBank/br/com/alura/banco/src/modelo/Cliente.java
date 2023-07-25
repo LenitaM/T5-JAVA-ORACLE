@@ -18,6 +18,8 @@ public class Cliente implements Autenticavel {
     /*Como ela assinou o contrato, agora precisa cumprir a obrigação,
     que é de implementar os métodos setSenha() e autentica().*/
     private int senha;
+
+    private String nome;
     private AutenticacaoUtil util;
     //Com isso, eliminamos a necessidade da existência do atributo senha
     /*o modelo.Cliente chamar a senha, quem guardará esta informação não será diretamente a própria classe, e sim a AutenticacaoUtil.
@@ -53,4 +55,12 @@ public class Cliente implements Autenticavel {
 Ao passo em que só é possível fazer com que uma classe herde apenas uma outra classe,
  podemos fazer com que sejam "assinados" tantos "contratos" quanto necessário,
 ou seja, não há limite para o número de implementações.*/
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }
