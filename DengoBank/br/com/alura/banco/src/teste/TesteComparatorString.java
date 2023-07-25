@@ -52,15 +52,19 @@ public class TesteComparatorString {
                 System.out.println(conta);
             }
 
-            NumeroDaContaComparator comparator = new teste.NumeroDaContaComparator();
+            NumeroDaContaComparator comparator = new NumeroDaContaComparator();
+            TitularDaContaComparator titularDaContaComparator = new TitularDaContaComparator();
+
+            lista.sort(comparator);
+            lista.sort(titularDaContaComparator);
 
             System.out.println("---------");
 
             for (Conta conta : lista) {
-                System.out.println(conta);
+                System.out.println(conta + "," + conta.getTitular().getNome()); //para saber o titular e seu nome
             }
 
-            lista.sort(comparator);
+
 
         }
 
