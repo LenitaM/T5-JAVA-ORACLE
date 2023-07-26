@@ -9,7 +9,6 @@ import java.util.*;
 
 public class TesteComparatorString {
 
-    //Código omitido
 
     public class Teste {
 

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Teste {
+public class TesteOrdenacao {
 
     public static void main(String[] args) {
 
@@ -42,8 +42,8 @@ public class Teste {
             System.out.println(conta);
         }
 
-       AgenciaDaContaComparator comparator = new AgenciaDaContaComparator();
-         //Ordenação de listas
+        AgenciaDaContaComparator comparator = new AgenciaDaContaComparator();
+        //Ordenação de listas
         lista.sort(comparator); //entrou no java.8 sort(comparator); comparator é o críterio de ordenação
 
         System.out.println("_____________Depois da ordenação___________________");
@@ -57,7 +57,7 @@ public class Teste {
 
 //Criar uma classe para fazer o teste no mesmo arquivo
 
- class AgenciaDaContaComparator implements Comparator  <Conta> {
+class AgenciaDaContaComparator implements Comparator  <Conta> {
 
     //implementar o método da interface
 
