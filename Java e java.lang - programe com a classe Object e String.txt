@@ -53,6 +53,179 @@ br.com.alura.gnarus
 br.gov.rj.notas
 de.adidas.lager
 
+	CLASSES ANONIMAS
+
+Olhar no arquivo TesteClassesAnonimas
+
+Function Object = 	um objeto que criamos para encapsular uma função ou método. As classes anônimas facilitam um pouco a criação desses objetos. Objeto que só encapsula uma função/método/procedimento.
+
+LAMBDAS
+
+Usada para simplificação os códigos.
+
+	sintaxe:
+
+1 - é possível usar o método sort da lista. Repare também que o return é opcional (desde que tiremos também o {} ):
+
+		nomes.sort((s1, s2) ->  s1.length() - s2.length());
+
+2 - repare que nem o return é preciso! Muito mais enxuto e conciso:
+
+		Collections.sort(nomes, (s1, s2) ->  s1.length() - s2.length());
 
 
+ Utilizando Lambdas em laços (for):
 
+	1 - A linguagem evoluiu muito como esse exercício mostra. Nas primeiras versões realmente era burocrático iterar as listas. Com as lambdas, o laço (for) se tornou uma simples chamada de um método. 
+
+		nomes.forEach((nome) -> System.out.println(nome));
+
+	O padrão ITERATOR
+
+Como posso acessar (iterar) todas essas implementações de maneira uniforme sem saber os detalhes de cada implementação? A resposta está na "caixa de padrões de projeto" e se chama Iterator.
+
+Uma Iterator é um objeto que possui no mínimo dois métodos: hasNext()e next(). Ou seja, você pode usá-lo para perguntar se existe um próximo elemento e pedir o próximo elemento. A notícia boa é que isso funciona com TODAS as implementações e aí a grande vantagem.
+
+		for (Iterator<String> i = nomes.iterator(); i.hasNext();) {
+  		 	String nome = i.next();
+    			System.out.println(nome);
+}
+
+Essa forma realmente funciona mas é bem, bem burocrática e nem usa lambdas. No entanto, o interessante aqui é que esse laço usa um padrão de projeto chamado Iterator.
+
+Mais sobre o padrão Iteraror na atividade dedicada.
+
+
+		CONCLUSÕES
+
+Arrays [ ] - Primeira estrutura de dados. Armazena diversos valores de uma só vez, vimos o que é um array de primitivos, com uma sintaxe incomum.
+
+	Array Primtivos
+
+Sintaxe Array Primitivos:
+
+int [ ] numeros = new int [ 2 ];
+numeros[ 0 ] = 5;
+numeros [ 1 ] = 10;
+
+System.out.println (numeros [ 0 ]);
+
+System.out.println (numeros.length);
+
+Inicializamos o array, indicando a posição desejada, lembrando que ela sempre inicia do 0, e aprendemos a acessar determinada posição, bem como a descobrir quantos elementos aquela lista é capaz de armazenar.
+
+	Arrays de Referências - Ao criar o objeto, o que é armazenado é a indicação à ele, e não ele em si. De resto, o funcionamento é igual ao tipo de array visto anteriormente.
+
+Sintaxe de Array de Referências:
+
+Conta [ ] referencias = new Conta [ 5 ];
+
+referencias [ 0 ] = new ContaCorrente (22, 11);
+referencias [ 1 ] = new ContaCorrente (33, 22);
+
+Conta ref = referencias [ 0 ];
+System.out.println (ref.getNumero( ) );
+
+System.out.println (referencias.lenght);
+
+Pontos Negativos: 
+
+	1 - Um ponto negativo deste tipo de lista é seu número fixo de elementos, uma vez criada, ela terá aquele tamanho, sem possibilidade de alteração ou flexibilização.
+
+	2 - Apesar de ser possível sabermos esta capacidade de armazenamento, não há um método que nos permita descobrir o número de elementos armazenados.
+
+	3 - Sintaxe esquisita;
+
+	ArrayList - java.util.ArrayList
+
+Por este motivo, vimos que foi criado um tipo de armazenador de objetos de referência, que é o ArrayList. Trata-se de uma classe que, internamente, utiliza um array. Sua sintaxe é, portanto, a mesma de uma classe qualquer.
+
+Além disso, vimos que é possível criar parâmetros nela, para indicarmos que só será possível armazenar um tipo de referência, por exemplo, do tipo Conta, como é o caso abaixo:
+
+Sintaxe
+
+// <generics> especificar o que queira listar
+	ArrayList<Conta> lista = new ArrayList<Conta>(); 
+
+			Conta cc1 = new ContaCorrente(22, 11);
+			lista.add(cc1);
+
+			Conta cc2 = new ContaPoupanca(22, 22);
+			lista.add(cc2);
+
+	System.out.println("Tamanho: " + lista.size());
+
+Ela possui diversos métodos específicos que facilitam o trabalho com estrutura de dados, é o caso do size(), que nos permite descobrir o número de referências armazenadas.
+
+	Há ainda outros tipos de estruturas de dados, como vimos, 	temos: LinkedList e o Vector.
+
+LinkedList e o Vector:  java.util.LinkedList e java.util.Vector
+
+O LinkedList é uma lista duplamente encadeada, enquanto o Vector é similar ao ArrayList, mas é capaz de trabalhar com diversos threads. Como são todas listas, implementam a interface List. Lembrando que todas as listas são sequências, e armazenam os elementos com base em um índice, isso não impede que adicionemos duplicados, ou seja, que itens sejam repetidos.
+
+Set - java.util.Set <interface>
+
+A ideia de armazenar dados é presente no mundo Java também na Collection, uma interface ainda mais genérica que List, e nos conjuntos Set e HashSet, que por sua vez não aceitam itens duplicados.
+
+	Classe Wrappers
+
+Como não é possível guardarmos valores primitivos em um array, existe para cada um deles uma classe wrapper correspondente. Guardar um lista de referencias para o objeto Integer (int).
+
+Esta transformação, do primitivo para o objeto, e vice-versa, é chamada de autoboxing e unboxing, e é feita automaticamente pelo Java.
+
+ 	Variação dos generics, onde omitimos o tipo, e o código continua funcionando:
+
+			List<Integer> lista = new ArrayList<>();
+
+						lista.add(5);
+						lista.add(12);
+
+			System.out.println("Tamanho: " + lista.size());
+
+	Ordenação de Listas
+
+Sintaxe:
+
+		List<Conta> lista = new ArrayList<Conta> ();
+
+//...
+		lista.sort(new NumeroDaContaComparator());
+
+
+		class NumeroDaContaComparator implements Comparator <Conta> {
+			public int compare (Conta c1, Conta c2) {
+		return Integer.compare(c1.getNumero(), c2.getNumero());
+	}
+}
+
+Aprendemos ainda formas de ordenar nossos métodos. Temos o sort(), bem como a classe Collections, que possui uma série de métodos auxiliares estáticos.
+
+O sort() recebe um critério de comparação, que é definido por meio de uma interface com um único método.
+
+	Classes Anônimas e Lambdas ( -> )
+
+Estas classes sem atributos, que possuem uma única funcionalidade, foram trabalhadas quando tratamos das classes anônimas e lambdas.
+
+Como vimos, é menos custoso criar uma classe, a partir da interface, e já criar o objeto, de forma direta, em unidade. Isso significa que, em vez de fazermos isso, que é um processo burocrático:
+
+Sintaxe Classes Anonimas: 
+
+			lista.sort( new Comparator<Conta>() {
+
+       				 public int compare(Conta c1, Conta c2) {
+
+              	 return Integer.compare(c1.getNumero(), c2.getNumero());
+        }
+});
+
+É melhor escrevermos da seguinte forma, menos burocrática:
+
+Sintaxe das Lambdas ( -> ):
+
+	lista.sort( 
+				(c1, c2) ->
+		 Integer.compare(c1.getNumero(),c2.getNumero())
+
+ );
+
+Neste segundo caso, estamos utilizando os lambdas, que facilitam ainda mais o trabalho com funções, no caso (c1, c2), e em seguida, o código com o resultado desejado, ou seja, o nosso método compare.
